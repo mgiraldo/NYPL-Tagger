@@ -1,0 +1,18 @@
+<p>
+  <b>Type:</b>
+  <%=h @bookmark.type %>
+</p>
+
+<p>
+  <b>Uuid:</b>
+  <%=h @bookmark.uuid %>
+</p>
+
+<p>
+  <b>Remote ref:</b>
+  <%=h @bookmark.remote_ref %>
+</p>
+
+
+<%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
+<%= link_to 'Back', bookmarks_path %>

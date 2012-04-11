@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>NYPL Toolbar</title>
+  	<%= javascript_include_tag :defaults %>
+	<style type="text/css">
+	body {
+		margin: 0;
+		color: #fff;
+		background: #887E6E url(/images/bg_toolbar.png) 0 -1px no-repeat scroll;
+		font-family: "Lucida Grande";
+		font-size: 11px;
+	}
+	a, a:link, a:visited {
+		color: #fff;
+	}
+	#nypl_explorer_toolbar {
+		padding: 4px 1em 0 150px;
+		position: relative;
+	}
+	.left_stuff {
+		position: absolute;
+		right: 1em;
+		top: 4px;
+		width: 25%;
+		text-align: right;
+	}
+	</style>
+
+</head>
+
+<body id="toolbar_iframe_body">
+<div id="nypl_explorer_toolbar"<% if @saved %> style="background: url(/images/star.png) 150px 50% no-repeat scroll;padding-left: 170px;"<% end %>>
+	<span id="bookmark_link">
+		<% if @saved %>
+			Saved as favorite
+		<% else %>
+			<%= link_to "Save to favorites", :url => { :controller => "remote", :action => "create", :p => @parent_href, :t => @parent_title}, :method => "post" %>
+		<% end %>
+	</span>
+	• <%= link_to "See all favorites", @current_user, :target => "_top" %>
+	
+
+	<div class="left_stuff">
+		Hello, <%= @current_user.first_name %>! • 
+		<%= link_to "My Account", edit_patron_path(@current_user), :target => "_top" %> •
+		<%= link_to "Sign out", "#" %>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+if @success
+  page.replace_html "bookmark_link", @bookmark.title + " saved!" 
+else
+  page.replace_html "bookmark_link", "Can't save item!"
+end
+page.visual_effect :highlight, 'bookmark_link'

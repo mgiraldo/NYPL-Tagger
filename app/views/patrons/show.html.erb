@@ -1,0 +1,77 @@
+<div id="account_info">
+	
+	<%= image_tag "fake-profile-#{@patron.id}.png", :height => 150 %>
+	
+	<h1><%= @patron.full_name %></h1>
+	
+	<% if @patron.id == @current_user.id %>
+	<p><em>That's you!</em></p>
+	<% end %>
+	
+	<p><%= @patron.bio %></p>
+	<p><%= @patron.city %>, <%=h @patron.state %></p>
+
+	<h4>Following 32 people</h4>
+	<%= image_tag "fake-followers.png" %>
+
+	<h4>Followed by 14 people</h4>
+	<%= image_tag "fake-followers.png" %>
+
+</div>
+
+<div id="main_col">
+	
+	<h2><%= @patron.first_name %>'s favorite stuff at the NYPL</h2>
+	
+	<% if @patron.lib_locations.size > 0 %>
+		<h3>Libraries</h3>
+		<ul>
+		<% @patron.lib_locations.each do |loc| %>
+		<li><%= link_to loc.title, loc.link %> 
+		<span class="mini_links"><%= link_to("delete", {:controller => "bookmarks", :action => "deleter", :id => loc, :patron_id => @current_user}, :class => "deleter") if @current_user == @patron %></span></li>
+		<% end %>
+		</ul>
+	<% end %>
+
+	<% if @patron.events.size > 0 %>
+		<h3>Upcoming events</h3>
+		<ul>
+		<% @patron.events.each do |event| %>
+		<li><%= link_to event.title, event.link %> 
+		<span class="mini_links"><%= link_to("delete", {:controller => "bookmarks", :action => "deleter", :id => event, :patron_id => @current_user}, :class => "deleter") if @current_user == @patron %></span></li>
+		<% end %>
+		</ul>
+	<% end %>
+
+	<% if @patron.pages.size > 0 %>
+		<h3>Pages</h3>
+		<ul>
+		<% @patron.pages.each do |bookmark| %>
+		<li><%= link_to bookmark.title, bookmark.link %> 
+		<span class="mini_links"><%= link_to bookmark.display_link, bookmark.link %> • <%= link_to("delete", {:controller => "bookmarks", :action => "deleter", :id => bookmark, :patron_id => @current_user}, :class => "deleter") if @current_user == @patron %></span></li>
+		<% end %>
+		</ul>
+	<% end %>
+
+	<% if @patron.ebooks.size > 0 %>
+		<h3>E-books &amp; e-media</h3>
+		<ul>
+		<% @patron.ebooks.each do |ebook| %>
+		<li><%= link_to ebook.title, ebook.link %> 
+		<span class="mini_links"><%= link_to("delete", {:controller => "bookmarks", :action => "deleter", :id => ebook, :patron_id => @current_user}, :class => "deleter") if @current_user == @patron %></span></li>
+		<% end %>
+		</ul>
+	<% end %>
+
+	<% if @patron.dg_images.size > 0 %>
+		<h3>Images</h3>
+		<div class="gallery">
+		<% @patron.dg_images.each do |img| %>
+		<div class="thumbnail"><%= link_to image_tag(img.thumbnail_image_address, :height => 80), img.link %> <%= link_to img.title, img.link %> 
+		
+		<span class="mini_links"><%= link_to("delete", {:controller => "bookmarks", :action => "deleter", :id => img, :patron_id => @current_user}, :class => "deleter") if @current_user == @patron %></span>
+		</div>
+		<% end %>
+		</div>
+	<% end %>
+</div>

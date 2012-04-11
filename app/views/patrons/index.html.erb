@@ -1,0 +1,21 @@
+
+
+<div id="main_col">
+
+	<h2>What are people doing at NYPL right now?</h2>
+
+	<ul>
+	<% @bookmarks.each do |bookmark| %>
+
+	<% unless bookmark.patrons.first.nil? %>
+		<li>
+			<%= image_tag "fake-profile-#{bookmark.patrons.first.id}.png", :height => 40 %>
+			<%= link_to bookmark.patrons.first.full_name, bookmark.patrons.first %> 
+			bookmarked <%= link_to image_tag(bookmark.thumbnail_image_address, :height => 40), bookmark.link if bookmark.type == "DgImage" %> <%= link_to bookmark.title, bookmark.link %>.
+		</li>
+	<% end %>
+
+	<% end %>
+	</ul>
+
+</div>
