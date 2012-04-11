@@ -1752,3 +1752,12 @@ Started GET "/t.js?u=http%3A%2F%2Flocalhost%3A3000%2F&t=1334170917647" for 127.0
 Rendered tag/_tagger.js.erb (0.1ms)
 Rendered tag/new.html.erb (0.6ms)
 Completed 200 OK in 20ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.flickr.com%2Fsearch%2F%3Fq%3Dgraffiti%2Btag%26l%3Dcc%26ss%3D0%26ct%3D0%26mt%3Dall%26w%3Dall%26adv%3D1&t=1334170949807" for 127.0.0.1 at 2012-04-11 15:02:29 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.flickr.com/search/?q=graffiti+tag&l=cc&ss=0&ct=0&mt=all&w=all&adv=1", "t"=>"1334170949807"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 38ms (Views: 2.3ms | ActiveRecord: 0.4ms)
