@@ -1,4 +1,4 @@
-# [NYPL Tagger]
+# NYPL Tagger
 
 This is a NYPL Labs project built on [Ruby on Rails](http://rubyonrails.org).
 
