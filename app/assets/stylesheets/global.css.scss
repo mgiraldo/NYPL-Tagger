@@ -1,0 +1,197 @@
+/* 
+Use Twitter bootstrap : See https://github.com/thomas-mcdonald/bootstrap-sass
+
+@import "bootstrap";
+@import "bootstrap-responsive"; 
+
+*/
+
+
+/* Palette: Go to http://colorschemedesigner.com/ choose #e3e3d4 as a starting color and choose "Tetrad" */
+
+body {
+	font-family: "Lucida Grande";
+	background: #e3e3d4;
+	margin: 0;
+}
+
+a, a:link, a:visited {
+	text-decoration: none;
+	color: #887E6E;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	margin: 0;
+	font-size: 1.6em;
+	font-weight: normal;
+	color: #000;
+}
+
+h2 {
+	margin: 0 0 0.5em 0;
+	font-size: 1.4em;
+	font-weight: normal;
+	color: #728b42;
+}
+
+h3 {
+	margin: 0 0 0.5em 0;
+	font-size: 1.2em;
+	font-weight: normal;
+	padding: 0.3em 0 0 0;
+	border-top: 1px solid #9da098;
+	color: #9da098;
+}
+
+h4 {
+	margin: 2em 0 0.5em 0;
+	font-size: 0.9em;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #444;
+}
+
+ul {
+	padding: 0 0 2em 0;
+	margin: 0 0 0 80px;
+	list-style-type: none;
+	border-top: 1px solid #e3e3d4;
+}
+
+li {
+	padding: 0.5em 1em 0.5em 0;
+	margin: 0;
+	border-bottom: 1px solid #e3e3d4;
+}
+
+.mini_links {
+	display: block;
+	padding-top: 0.2em;
+	font-size: 10px;
+	text-transform: uppercase;
+	color: #cfd4c6;
+}
+
+.mini_links a {
+	color: #ababa3;
+}
+
+.mini_links a:hover {
+	color: #77385c;
+}
+
+
+#main {
+	position: relative;
+	width: 960px;
+	margin: 0 auto;
+	padding: 0;
+	background: #cfd4c6;
+	overflow: hidden;
+}
+
+#toolbar a, #toolbar a:link, #toolbar a:visited {
+	color: #fff;
+}
+
+#toolbar {
+	margin: 0;
+	color: #fff;
+	background: #887E6E url(/images/bg_toolbar.png) 0 -1px no-repeat scroll;
+	font-family: "Lucida Grande";
+	font-size: 11px;
+	padding: 4px 1em 0 150px;
+	position: relative;
+	height: 21px;
+}
+
+.left_stuff {
+	position: absolute;
+	right: 1em;
+	top: 4px;
+	width: 25%;
+	text-align: right;
+}
+
+
+#account_info {
+	position: absolute;
+	width: 200px;
+	right: 10px;
+	top: 35px;
+	padding: 10px;
+}
+
+#account_info em {
+	color: #c00;
+}
+
+#main_col {
+	margin: 0 240px 0 0;
+	padding: 1em 1em  3em 1em;
+	background: #fff;
+}
+
+.gallery {
+	width: 100%;
+	overflow: hidden;
+	padding: 1px 0 0 1px;
+}
+
+.gallery .thumbnail {
+	position: relative;
+	float: left;
+	width: 104px;
+	text-align: center;
+	height: 140px;
+	border: 1px solid #e3e3d4;
+	padding: 1em;
+	margin: -1px 0 0 -1px;
+}
+
+.gallery .thumbnail a {
+	display: block;
+}
+
+/* Rails-specific */
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+

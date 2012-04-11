@@ -1,0 +1,1433 @@
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (79.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-04-11 12:55:40 -0400
+Served asset /tag.jpg - 200 OK (2ms)
+
+
+Started GET "/assets/tagger.js" for 127.0.0.1 at 2012-04-11 12:55:49 -0400
+Compiled tagger.js  (0ms)  (pid 14433)
+Served asset /tagger.js - 200 OK (9ms)
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-04-11 13:01:41 -0400
+Served asset /tag.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-04-11 13:01:44 -0400
+Served asset /tag.jpg - 304 Not Modified (0ms)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to AddOldTables (20120411170334)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "patrons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "card_number" varchar(255), "password" varchar(255), "bio" varchar(255), "city" varchar(255), "state" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "bookmarks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "uuid" varchar(255), "title" varchar(255), "original_url" varchar(255), "remote_ref" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "bookmarks_patrons" ("bookmark_id" varchar(255), "patron_id" varchar(255)) [0m
+
+
+Started GET "/patrons" for 127.0.0.1 at 2012-04-11 13:09:30 -0400
+  Processing by PatronsController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+ActiveRecord::StatementInvalid (Could not find table 'patrons'):
+  app/controllers/patrons_controller.rb:5:in `index'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.3ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to AddOldTables (20120411170334)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "patrons" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "card_number" varchar(255), "password" varchar(255), "bio" varchar(255), "city" varchar(255), "state" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "bookmarks" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "uuid" varchar(255), "title" varchar(255), "original_url" varchar(255), "remote_ref" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mCREATE TABLE "bookmarks_patrons" ("bookmark_id" varchar(255), "patron_id" varchar(255)) [0m
+  [1m[35mSQL (8.6ms)[0m  INSERT INTO "patrons" ("bio", "card_number", "city", "created_at", "email", "first_name", "last_name", "password", "state", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["bio", "Hacker, painter"], ["card_number", "23333073913020"], ["city", "Brooklyn"], ["created_at", Wed, 11 Apr 2012 17:10:02 UTC +00:00], ["email", "mlascarides@gmail.com"], ["first_name", "Michael"], ["last_name", "Lascarides"], ["password", "3333"], ["state", "NY"], ["updated_at", Wed, 11 Apr 2012 17:10:02 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120411170334')[0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("bookmarks")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("bookmarks_patrons")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("patrons")
+
+
+Started GET "/patrons" for 127.0.0.1 at 2012-04-11 13:10:07 -0400
+  Processing by PatronsController#index as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" [0m
+Rendered patrons/index.html.erb within layouts/application (9.1ms)
+Compiled application.css  (2ms)  (pid 14433)
+Compiled bookmarks.css  (4ms)  (pid 14433)
+Completed 500 Internal Server Error in 56ms
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load path: Sass::Rails::Importer(/Volumes/mlascarides/Sites/tagger/NYPL-Tagger/app/assets/stylesheets/global.css.scss)
+  (in /Volumes/mlascarides/Sites/tagger/NYPL-Tagger/app/assets/stylesheets/global.css.scss)):
+    2: <html>
+    3: <head>
+    4:   <title>Tagger</title>
+    5:   <%= stylesheet_link_tag    "application" %>
+    6:   <%= javascript_include_tag "application" %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/global.css.scss:3
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___3658784004100565189_2170723260'
+  app/controllers/patrons_controller.rb:7:in `index'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.2ms)
+
+
+Started GET "/patrons" for 127.0.0.1 at 2012-04-11 13:10:44 -0400
+  Processing by PatronsController#index as HTML
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" 
+Rendered patrons/index.html.erb within layouts/application (7.7ms)
+Compiled application.css  (1ms)  (pid 14433)
+Completed 500 Internal Server Error in 53ms
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load path: Sass::Rails::Importer(/Volumes/mlascarides/Sites/tagger/NYPL-Tagger/app/assets/stylesheets/global.css.scss)
+  (in /Volumes/mlascarides/Sites/tagger/NYPL-Tagger/app/assets/stylesheets/global.css.scss)):
+    2: <html>
+    3: <head>
+    4:   <title>Tagger</title>
+    5:   <%= stylesheet_link_tag    "application" %>
+    6:   <%= javascript_include_tag "application" %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/global.css.scss:3
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___3658784004100565189_2170723260'
+  app/controllers/patrons_controller.rb:7:in `index'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/patrons" for 127.0.0.1 at 2012-04-11 13:11:02 -0400
+  Processing by PatronsController#index as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" [0m
+Rendered patrons/index.html.erb within layouts/application (7.6ms)
+Compiled application.css  (1ms)  (pid 14433)
+Completed 500 Internal Server Error in 56ms
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load path: Sass::Rails::Importer(/Volumes/mlascarides/Sites/tagger/NYPL-Tagger/app/assets/stylesheets/global.css.scss)
+  (in /Volumes/mlascarides/Sites/tagger/NYPL-Tagger/app/assets/stylesheets/global.css.scss)):
+    2: <html>
+    3: <head>
+    4:   <title>Tagger</title>
+    5:   <%= stylesheet_link_tag    "application" %>
+    6:   <%= javascript_include_tag "application" %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/global.css.scss:3
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___3658784004100565189_2170723260'
+  app/controllers/patrons_controller.rb:7:in `index'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/patrons" for 127.0.0.1 at 2012-04-11 13:13:41 -0400
+  Processing by PatronsController#index as HTML
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" 
+Rendered patrons/index.html.erb within layouts/application (8.3ms)
+Compiled application.css  (1ms)  (pid 14433)
+Completed 500 Internal Server Error in 33ms
+
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load path: Sass::Rails::Importer(/Volumes/mlascarides/Sites/tagger/NYPL-Tagger/app/assets/stylesheets/global.css.scss)
+  (in /Volumes/mlascarides/Sites/tagger/NYPL-Tagger/app/assets/stylesheets/global.css.scss)):
+    2: <html>
+    3: <head>
+    4:   <title>Tagger</title>
+    5:   <%= stylesheet_link_tag    "application" %>
+    6:   <%= javascript_include_tag "application" %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+  app/assets/stylesheets/global.css.scss:3
+  app/views/layouts/application.html.erb:5:in `_app_views_layouts_application_html_erb___3658784004100565189_2170723260'
+  app/controllers/patrons_controller.rb:7:in `index'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (2.8ms)
+
+
+Started GET "/patrons" for 127.0.0.1 at 2012-04-11 13:14:16 -0400
+  Processing by PatronsController#index as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" [0m
+Rendered patrons/index.html.erb within layouts/application (8.0ms)
+Compiled application.css  (1ms)  (pid 14433)
+Compiled global.css  (1ms)  (pid 14433)
+Compiled patrons.css  (0ms)  (pid 14433)
+Compiled remote.css  (0ms)  (pid 14433)
+Compiled application.js  (5ms)  (pid 14433)
+Compiled jquery.js  (1ms)  (pid 14433)
+Compiled jquery_ujs.js  (0ms)  (pid 14433)
+Compiled bookmarks.js  (209ms)  (pid 14433)
+Compiled patrons.js  (55ms)  (pid 14433)
+Compiled remote.js  (52ms)  (pid 14433)
+Completed 200 OK in 501ms (Views: 499.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-11 13:14:16 -0400
+Served asset /bookmarks.css - 200 OK (4ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-11 13:14:16 -0400
+Served asset /patrons.css - 200 OK (2ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-11 13:14:16 -0400
+Served asset /remote.css - 200 OK (1ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-11 13:14:16 -0400
+Served asset /bookmarks.js - 200 OK (1ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-11 13:14:16 -0400
+Served asset /patrons.js - 200 OK (1ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-11 13:14:16 -0400
+Served asset /remote.js - 200 OK (1ms)
+
+
+Started GET "/assets/tagger.js?body=1" for 127.0.0.1 at 2012-04-11 13:14:16 -0400
+Served asset /tagger.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-11 13:14:16 -0400
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-11 13:14:16 -0400
+Served asset /global.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-11 13:14:16 -0400
+Served asset /jquery.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-11 13:14:16 -0400
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-11 13:14:16 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-04-11 13:14:22 -0400
+Served asset /tag.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2012-04-11 13:14:32 -0400
+  Processing by BookmarksController#index as HTML
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" 
+Rendered bookmarks/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-11 13:14:32 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-11 13:14:32 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2012-04-11 13:15:28 -0400
+  Processing by BookmarksController#index as HTML
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" [0m
+Rendered bookmarks/index.html.erb within layouts/application (0.4ms)
+Compiled global.css  (21ms)  (pid 14433)
+Compiled application.css  (1ms)  (pid 14433)
+Completed 200 OK in 38ms (Views: 36.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-11 13:15:28 -0400
+Served asset /application.css - 200 OK (0ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-11 13:15:28 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-11 13:15:28 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-11 13:15:28 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-11 13:15:28 -0400
+Served asset /global.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-11 13:15:28 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-11 13:15:28 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-11 13:15:28 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-11 13:15:28 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-11 13:15:28 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tagger.js?body=1" for 127.0.0.1 at 2012-04-11 13:15:28 -0400
+Served asset /tagger.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-11 13:15:28 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2012-04-11 13:16:13 -0400
+  Processing by BookmarksController#index as HTML
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" 
+Rendered bookmarks/index.html.erb within layouts/application (0.4ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    21: 			<%= link_to_unless_current "Recommended for You", @current_user %>
+    22: 
+    23: 			<div class="left_stuff">
+    24: 				Hello, <%= @current_user.first_name %>! • 
+    25: 				<%= link_to_unless_current "My Account", edit_patron_path(@current_user), :target => "_top" %> •
+    26: 				<%= link_to "Sign out", "#" %>
+    27: 			</div>
+  app/views/layouts/application.html.erb:24:in `_app_views_layouts_application_html_erb___3658784004100565189_2158336260'
+  app/controllers/bookmarks_controller.rb:7:in `index'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.1ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2012-04-11 13:16:54 -0400
+  Processing by BookmarksController#index as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" 
+Rendered bookmarks/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 17.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-11 13:16:54 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-11 13:16:54 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-11 13:16:54 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-11 13:16:54 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-11 13:16:54 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-11 13:16:54 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-11 13:16:54 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-11 13:16:54 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-11 13:16:54 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-11 13:16:54 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tagger.js?body=1" for 127.0.0.1 at 2012-04-11 13:16:54 -0400
+Served asset /tagger.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-11 13:16:54 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/images/bg_toolbar.png" for 127.0.0.1 at 2012-04-11 13:16:54 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg_toolbar.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2012-04-11 13:18:05 -0400
+  Processing by BookmarksController#index as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" 
+Rendered bookmarks/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 32ms (Views: 15.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-11 13:18:05 -0400
+Served asset /application.css - 304 Not Modified (27ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-11 13:18:05 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-11 13:18:05 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-11 13:18:05 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-11 13:18:05 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-11 13:18:05 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-11 13:18:05 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-11 13:18:05 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-11 13:18:05 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-11 13:18:05 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tagger.js?body=1" for 127.0.0.1 at 2012-04-11 13:18:05 -0400
+Served asset /tagger.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-11 13:18:05 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/images/bg_toolbar.png" for 127.0.0.1 at 2012-04-11 13:18:06 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg_toolbar.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/bookmarks" for 127.0.0.1 at 2012-04-11 13:18:08 -0400
+  Processing by BookmarksController#index as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" 
+Rendered bookmarks/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 54ms (Views: 38.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-11 13:18:08 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-11 13:18:08 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-11 13:18:08 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-11 13:18:08 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-11 13:18:08 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-11 13:18:08 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-11 13:18:08 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-11 13:18:08 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-11 13:18:08 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-11 13:18:08 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tagger.js?body=1" for 127.0.0.1 at 2012-04-11 13:18:08 -0400
+Served asset /tagger.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-11 13:18:08 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/images/bg_toolbar.png" for 127.0.0.1 at 2012-04-11 13:18:10 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg_toolbar.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/patrons/1/edit" for 127.0.0.1 at 2012-04-11 13:19:15 -0400
+  Processing by PatronsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" WHERE "patrons"."id" = ? LIMIT 1  [["id", "1"]]
+Rendered patrons/_form.html.erb (32.2ms)
+Rendered patrons/edit.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 59ms (Views: 57.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-11 13:19:15 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-11 13:19:15 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-11 13:19:15 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-11 13:19:15 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-11 13:19:15 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:15 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:15 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:15 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:15 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:15 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tagger.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:15 -0400
+Served asset /tagger.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:15 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/images/bg_toolbar.png" for 127.0.0.1 at 2012-04-11 13:19:17 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg_toolbar.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/patrons/1" for 127.0.0.1 at 2012-04-11 13:19:21 -0400
+  Processing by PatronsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" WHERE "patrons"."id" = ? LIMIT 1  [["id", "1"]]
+Rendered patrons/show.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-11 13:19:21 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-11 13:19:21 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-11 13:19:21 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-11 13:19:21 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-11 13:19:21 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:21 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:21 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:21 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:21 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:21 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tagger.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:21 -0400
+Served asset /tagger.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:21 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/images/bg_toolbar.png" for 127.0.0.1 at 2012-04-11 13:19:22 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg_toolbar.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/patrons/1" for 127.0.0.1 at 2012-04-11 13:19:48 -0400
+  Processing by PatronsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" WHERE "patrons"."id" = ? LIMIT 1  [["id", "1"]]
+Rendered patrons/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-11 13:19:49 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-11 13:19:49 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-11 13:19:49 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-11 13:19:49 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:49 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-11 13:19:49 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:49 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:49 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:49 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:49 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tagger.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:49 -0400
+Served asset /tagger.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-11 13:19:49 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/images/bg_toolbar.png" for 127.0.0.1 at 2012-04-11 13:19:50 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg_toolbar.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/patrons/1" for 127.0.0.1 at 2012-04-11 13:20:18 -0400
+  Processing by PatronsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" WHERE "patrons"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mLibLocation Load (0.2ms)[0m  [1mSELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'LibLocation' ORDER BY title[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'Event' ORDER BY title
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'Bookmark' ORDER BY title[0m
+  [1m[35mEbook Load (0.2ms)[0m  SELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'Ebook' ORDER BY title
+  [1m[36mDgImage Load (0.2ms)[0m  [1mSELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'DgImage' ORDER BY title[0m
+Rendered patrons/show.html.erb within layouts/application (135.1ms)
+Completed 200 OK in 178ms (Views: 174.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-11 13:20:19 -0400
+Served asset /application.css - 304 Not Modified (26ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-11 13:20:19 -0400
+Served asset /bookmarks.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-11 13:20:19 -0400
+Served asset /global.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-11 13:20:19 -0400
+Served asset /patrons.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-11 13:20:19 -0400
+Served asset /remote.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-11 13:20:19 -0400
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-11 13:20:19 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-11 13:20:19 -0400
+Served asset /bookmarks.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-11 13:20:19 -0400
+Served asset /patrons.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-11 13:20:19 -0400
+Served asset /remote.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/tagger.js?body=1" for 127.0.0.1 at 2012-04-11 13:20:19 -0400
+Served asset /tagger.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-11 13:20:19 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fake-profile-1.png" for 127.0.0.1 at 2012-04-11 13:20:20 -0400
+Served asset /fake-profile-1.png - 404 Not Found (22ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/fake-profile-1.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/assets/fake-followers.png" for 127.0.0.1 at 2012-04-11 13:20:20 -0400
+Served asset /fake-followers.png - 404 Not Found (2ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/fake-followers.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/images/bg_toolbar.png" for 127.0.0.1 at 2012-04-11 13:20:20 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg_toolbar.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/patrons/1" for 127.0.0.1 at 2012-04-11 13:21:01 -0400
+  Processing by PatronsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" WHERE "patrons"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mLibLocation Load (0.1ms)[0m  SELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'LibLocation' ORDER BY title
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'Event' ORDER BY title[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'Bookmark' ORDER BY title
+  [1m[36mEbook Load (0.1ms)[0m  [1mSELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'Ebook' ORDER BY title[0m
+  [1m[35mDgImage Load (0.2ms)[0m  SELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'DgImage' ORDER BY title
+Rendered patrons/show.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-11 13:21:01 -0400
+Served asset /application.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-11 13:21:01 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-11 13:21:01 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-11 13:21:01 -0400
+Served asset /remote.css - 304 Not Modified (25ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-11 13:21:01 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-11 13:21:01 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-11 13:21:01 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-11 13:21:01 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-11 13:21:01 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-11 13:21:01 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tagger.js?body=1" for 127.0.0.1 at 2012-04-11 13:21:01 -0400
+Served asset /tagger.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-11 13:21:01 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fake-followers.png" for 127.0.0.1 at 2012-04-11 13:21:03 -0400
+Served asset /fake-followers.png - 200 OK (5ms)
+
+
+Started GET "/assets/fake-profile-1.png" for 127.0.0.1 at 2012-04-11 13:21:03 -0400
+Served asset /fake-profile-1.png - 200 OK (3ms)
+
+
+Started GET "/images/bg_toolbar.png" for 127.0.0.1 at 2012-04-11 13:21:03 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg_toolbar.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/remote/" for 127.0.0.1 at 2012-04-11 13:21:27 -0400
+
+ActionController::RoutingError (No route matches [GET] "/remote"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/remote/toolbar" for 127.0.0.1 at 2012-04-11 13:21:33 -0400
+
+ActionController::RoutingError (No route matches [GET] "/remote/toolbar"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-04-11 13:22:10 -0400
+Served asset /tag.jpg - 304 Not Modified (1ms)
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-04-11 13:22:12 -0400
+Served asset /tag.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-11 13:22:21 -0400
+  Processing by PatronsController#index as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" 
+Rendered patrons/index.html.erb within layouts/application (12.8ms)
+Completed 500 Internal Server Error in 18ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+    5: 	<h2>What are people doing at NYPL right now?</h2>
+    6: 
+    7: 	<ul>
+    8: 	<% @bookmarks.each do |bookmark| %>
+    9: 
+    10: 	<% unless bookmark.patrons.first.nil? %>
+    11: 		<li>
+  app/views/patrons/index.html.erb:8:in `_app_views_patrons_index_html_erb__563168955099831218_2180910940'
+  app/controllers/patrons_controller.rb:7:in `index'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-11 13:23:12 -0400
+  Processing by PatronsController#index as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.2ms)[0m  SELECT "bookmarks".* FROM "bookmarks" ORDER BY created_at DESC LIMIT 20
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" [0m
+Rendered patrons/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 44ms (Views: 14.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:13 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:13 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:13 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:13 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:13 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:13 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:13 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:13 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:13 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:13 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tagger.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:13 -0400
+Served asset /tagger.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:13 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/images/bg_toolbar.png" for 127.0.0.1 at 2012-04-11 13:23:14 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg_toolbar.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-11 13:23:26 -0400
+  Processing by PatronsController#index as HTML
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" ORDER BY created_at DESC LIMIT 20[0m
+Rendered patrons/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 45ms (Views: 14.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:26 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:26 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:26 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:26 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:26 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:26 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:26 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:26 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:26 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:26 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tagger.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:26 -0400
+Served asset /tagger.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:26 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/images/bg_toolbar.png" for 127.0.0.1 at 2012-04-11 13:23:27 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg_toolbar.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/patrons" for 127.0.0.1 at 2012-04-11 13:23:32 -0400
+  Processing by PatronsController#index as HTML
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" ORDER BY created_at DESC LIMIT 20[0m
+Rendered patrons/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 22ms (Views: 14.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:32 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:32 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:32 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:32 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:32 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:32 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:32 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:32 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:32 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:32 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tagger.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:32 -0400
+Served asset /tagger.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:32 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/images/bg_toolbar.png" for 127.0.0.1 at 2012-04-11 13:23:33 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg_toolbar.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/patrons/1" for 127.0.0.1 at 2012-04-11 13:23:36 -0400
+  Processing by PatronsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" WHERE "patrons"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mLibLocation Load (0.1ms)[0m  SELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'LibLocation' ORDER BY title
+  [1m[36mEvent Load (0.2ms)[0m  [1mSELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'Event' ORDER BY title[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'Bookmark' ORDER BY title
+  [1m[36mEbook Load (0.1ms)[0m  [1mSELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'Ebook' ORDER BY title[0m
+  [1m[35mDgImage Load (0.2ms)[0m  SELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'DgImage' ORDER BY title
+Rendered patrons/show.html.erb within layouts/application (50.2ms)
+Completed 200 OK in 60ms (Views: 57.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:36 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:36 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:36 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:36 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-11 13:23:36 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:36 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:36 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:36 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:36 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:36 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tagger.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:36 -0400
+Served asset /tagger.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-11 13:23:36 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/images/bg_toolbar.png" for 127.0.0.1 at 2012-04-11 13:23:37 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg_toolbar.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/assets/fake-followers.png" for 127.0.0.1 at 2012-04-11 13:23:37 -0400
+Served asset /fake-followers.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fake-profile-1.png" for 127.0.0.1 at 2012-04-11 13:23:37 -0400
+Served asset /fake-profile-1.png - 304 Not Modified (0ms)
+
+
+Started GET "/patrons/1" for 127.0.0.1 at 2012-04-11 13:24:23 -0400
+
+ArgumentError (missing :controller):
+  config/routes.rb:59:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (2.8ms)
+
+
+Started GET "/patrons/1" for 127.0.0.1 at 2012-04-11 13:24:37 -0400
+
+SyntaxError (/Volumes/mlascarides/Sites/tagger/NYPL-Tagger/config/routes.rb:59: syntax error, unexpected tSYMBEG
+  match 'remote/:action'. :controller => 'remote'
+                           ^):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (3.1ms)
+
+
+Started GET "/patrons/1" for 127.0.0.1 at 2012-04-11 13:24:45 -0400
+  Processing by PatronsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" WHERE "patrons"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mLibLocation Load (0.1ms)[0m  [1mSELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'LibLocation' ORDER BY title[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'Event' ORDER BY title
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'Bookmark' ORDER BY title[0m
+  [1m[35mEbook Load (0.1ms)[0m  SELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'Ebook' ORDER BY title
+  [1m[36mDgImage Load (0.1ms)[0m  [1mSELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'DgImage' ORDER BY title[0m
+Rendered patrons/show.html.erb within layouts/application (50.6ms)
+Completed 200 OK in 60ms (Views: 57.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-11 13:24:45 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-11 13:24:45 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-11 13:24:45 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-11 13:24:45 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-11 13:24:45 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-11 13:24:45 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-11 13:24:45 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-11 13:24:45 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-11 13:24:45 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-11 13:24:45 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tagger.js?body=1" for 127.0.0.1 at 2012-04-11 13:24:45 -0400
+Served asset /tagger.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-11 13:24:45 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/images/bg_toolbar.png" for 127.0.0.1 at 2012-04-11 13:24:46 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg_toolbar.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/fake-profile-1.png" for 127.0.0.1 at 2012-04-11 13:24:46 -0400
+Served asset /fake-profile-1.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fake-followers.png" for 127.0.0.1 at 2012-04-11 13:24:46 -0400
+Served asset /fake-followers.png - 304 Not Modified (0ms)
+
+
+Started GET "/remote/toolbar" for 127.0.0.1 at 2012-04-11 13:24:53 -0400
+  Processing by RemoteController#toolbar as HTML
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered remote/toolbar.html.erb within layouts/application (66.0ms)
+Completed 500 Internal Server Error in 110ms
+
+ActionView::Template::Error (undefined method `link_to_remote' for #<#<Class:0x00000103cddf58>:0x00000103d72068>):
+    37: 		<% if @saved %>
+    38: 			Saved as favorite
+    39: 		<% else %>
+    40: 			<%= link_to_remote "Save to favorites", :url => { :controller => "remote", :action => "create", :p => @parent_href, :t => @parent_title}, :method => "post" %>
+    41: 		<% end %>
+    42: 	</span>
+    43: 	• <%= link_to "See all favorites", @current_user, :target => "_top" %>
+  app/views/remote/toolbar.html.erb:40:in `_app_views_remote_toolbar_html_erb___2702624859973701961_2179808500'
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (2.9ms)
+
+
+Started GET "/remote/toolbar" for 127.0.0.1 at 2012-04-11 13:26:41 -0400
+  Processing by RemoteController#toolbar as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."original_url" IS NULL ORDER BY title LIMIT 1
+Rendered remote/toolbar.html.erb (4.8ms)
+Completed 200 OK in 36ms (Views: 7.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-04-11 13:26:41 -0400
+Served asset /defaults.js - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/images/bg_toolbar.png" for 127.0.0.1 at 2012-04-11 13:26:41 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg_toolbar.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/remote/toolbar?method=post&url%5Baction%5D=create&url%5Bcontroller%5D=remote&url%5Bp%5D=&url%5Bt%5D=" for 127.0.0.1 at 2012-04-11 13:26:45 -0400
+  Processing by RemoteController#toolbar as HTML
+  Parameters: {"method"=>"post", "url"=>{"action"=>"create", "controller"=>"remote", "p"=>"", "t"=>""}}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT 1 FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."original_url" IS NULL ORDER BY title LIMIT 1
+Rendered remote/toolbar.html.erb (4.5ms)
+Completed 200 OK in 36ms (Views: 6.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/defaults.js" for 127.0.0.1 at 2012-04-11 13:26:45 -0400
+Served asset /defaults.js - 404 Not Found (3ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/defaults.js"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/images/bg_toolbar.png" for 127.0.0.1 at 2012-04-11 13:26:45 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg_toolbar.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-11 13:27:05 -0400
+  Processing by PatronsController#index as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" ORDER BY created_at DESC LIMIT 20
+Rendered patrons/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 22ms (Views: 14.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-11 13:27:06 -0400
+Served asset /application.css - 304 Not Modified (29ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-11 13:27:06 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-11 13:27:06 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-11 13:27:06 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-11 13:27:06 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-11 13:27:06 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-11 13:27:06 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-11 13:27:06 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-11 13:27:06 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-11 13:27:06 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tagger.js?body=1" for 127.0.0.1 at 2012-04-11 13:27:06 -0400
+Served asset /tagger.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-11 13:27:06 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/images/bg_toolbar.png" for 127.0.0.1 at 2012-04-11 13:27:07 -0400
+
+ActionController::RoutingError (No route matches [GET] "/images/bg_toolbar.png"):
+  
+
+Rendered /usr/local/rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)

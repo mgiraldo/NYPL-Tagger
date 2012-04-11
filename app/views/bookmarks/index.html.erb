@@ -1,0 +1,24 @@
+<h1>Listing bookmarks</h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Uuid</th>
+    <th>Remote ref</th>
+  </tr>
+
+<% for bookmark in @bookmarks %>
+  <tr>
+    <td><%=h bookmark.type %></td>
+    <td><%=h bookmark.uuid %></td>
+    <td><%=h bookmark.remote_ref %></td>
+    <td><%= link_to 'Show', bookmark %></td>
+    <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
+    <td><%= link_to 'Destroy', bookmark, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New bookmark', new_bookmark_path %>
