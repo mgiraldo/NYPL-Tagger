@@ -40,7 +40,7 @@
         border: 3px solid #aaa;
         border-top: none;
         padding: 25px;
-        width: 500px;
+        width: 540px;
       }
 
       #sidebar {
@@ -63,14 +63,15 @@
         background-repeat: no-repeat;
         background-position: top left;
         height: 144px;
+        padding-top: 50px;
       }
       #header h1, #header h2 {
-      	margin: 0 0 0 250px;
+      	margin: 0 0 0 240px;
       }
       #header h2 {
         color: #888;
         font-weight: normal;
-        font-size: 16px;
+        font-size: 14px;
       }
 
 
@@ -113,44 +114,6 @@
         margin: 0;
         padding: 10px;
       }
-
-
-      #getting-started {
-        border-top: 1px solid #ccc;
-        margin-top: 25px;
-        padding-top: 15px;
-      }
-      #getting-started h1 {
-        margin: 0;
-        font-size: 20px;
-      }
-      #getting-started h2 {
-        margin: 0;
-        font-size: 14px;
-        font-weight: normal;
-        color: #333;
-        margin-bottom: 25px;
-      }
-      #getting-started ol {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #getting-started li {
-        font-size: 18px;
-        color: #888;
-        margin-bottom: 25px;
-      }
-      #getting-started li h2 {
-        margin: 0;
-        font-weight: normal;
-        font-size: 18px;
-        color: #333;
-      }
-      #getting-started li p {
-        color: #555;
-        font-size: 13px;
-      }
-
 
       #sidebar ul {
         margin-left: 0;
@@ -203,32 +166,9 @@
 				jsCode.setAttribute('src', 'http://localhost:3000/assets/tagger.js');  
 				document.body.appendChild(jsCode);  
 		      }
-          )();">About your application&rsquo;s environment</a></h3>
-          <div id="about-content" style="display: none"></div>
+          )();">This is the Tagger bookmarklet</a>.</h3>
+          <p>Drag to your bookmarks bar to make use of it throughout the web!</p>
         </div>
-
-        <div id="getting-started">
-          <h1>Getting started</h1>
-          <h2>Here&rsquo;s how to get rolling:</h2>
-
-          <ol>
-            <li>
-              <h2>Use <code>rails generate</code> to create your models and controllers</h2>
-              <p>To see all available options, run it without parameters.</p>
-            </li>
-
-            <li>
-              <h2>Set up a default route and remove <span class="filename">public/index.html</span></h2>
-              <p>Routes are set up in <span class="filename">config/routes.rb</span>.</p>
-            </li>
-
-            <li>
-              <h2>Create your database</h2>
-              <p>Run <code>rake db:create</code> to create your database. If you're not using SQLite (the default), edit <span class="filename">config/database.yml</span> with your username and password.</p>
-            </li>
-          </ol>
-        </div>
-      </div>
 
       <div id="footer">&nbsp;</div>
     </div>
