@@ -1,0 +1,6 @@
+(
+	function () {
+		alert("tagging url: <%=params[:u]%> time: <%=params[:t]%>");
+		if (document.title.substring(0, 12) == '(Saving...) ') document.title = document.title.substring(12);
+	}
+)();

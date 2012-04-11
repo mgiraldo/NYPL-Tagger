@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>NYPL Tagger</title>
-    <style type="text/css" media="screen">
       body {
         margin: 0;
         margin-bottom: 25px;
@@ -66,7 +61,7 @@
         padding-top: 50px;
       }
       #header h1, #header h2 {
-      	margin: 0 0 0 240px;
+        margin: 0 0 0 240px;
       }
       #header h2 {
         color: #888;
@@ -135,42 +130,3 @@
       .filename {
         font-style: italic;
       }
-    </style>
-  </head>
-  <body>
-    <div id="page">
-      <!-- <div id="sidebar">
-        <ul id="sidebar-items">
-          <li>
-            <h3>Browse the documentation</h3>
-            <ul class="links">
-              <li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
-              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
-              <li><a href="http://www.ruby-doc.org/core/">Ruby core</a></li>
-              <li><a href="http://www.ruby-doc.org/stdlib/">Ruby standard library</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div> -->
-
-      <div id="content">
-        <div id="header">
-          <h1>NYPL Tagger</h1>
-          <h2>Take control of the Library!</h2>
-        </div>
-
-        <div id="about">
-          <h3><a href="javascript:(
-		      function () {
-				var jsCode = document.createElement('script');  
-				jsCode.setAttribute('src', 'http://localhost:3000/assets/tagger.js');  
-				document.body.appendChild(jsCode);  
-		      }
-          )();">This is the Tagger bookmarklet</a>.</h3>
-          <p>Drag to your bookmarks bar to make use of it throughout the web!</p>
-        </div>
-
-      <div id="footer">&nbsp;</div>
-    </div>
-  </body>
-</html>
