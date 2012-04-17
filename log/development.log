@@ -6860,3 +6860,212 @@ Started GET "/s/add?u=http%3A%2F%2Flocalhost%3A3000%2F&t=1334691773113" for 127.
   [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://localhost:3000/' LIMIT 1
   [1m[36m (0.2ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 3)[0m
 Completed 200 OK in 58ms (Views: 0.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-17 15:51:22 -0400
+  Processing by TagController#help as HTML
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/help.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 53ms (Views: 36.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-17 15:51:23 -0400
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-17 15:51:23 -0400
+Served asset /bookmarks.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-17 15:51:23 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-17 15:51:23 -0400
+Served asset /remote.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-17 15:51:23 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-04-17 15:51:23 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-17 15:51:23 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-17 15:51:23 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-17 15:51:23 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-17 15:51:23 -0400
+Served asset /patrons.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-17 15:51:23 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-04-17 15:51:23 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-17 15:51:23 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-04-17 15:51:23 -0400
+Served asset /tag.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-04-17 15:51:23 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwestciv.com%2Ftools%2Fshadows%2F&t=1334692293384" for 127.0.0.1 at 2012-04-17 15:51:33 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://westciv.com/tools/shadows/", "t"=>"1334692293384"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.5ms)
+Rendered tag/new.html.erb (1.0ms)
+Completed 200 OK in 20ms (Views: 2.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/s/add?callback=jQuery172014007149077951908_1334692293447&u=http%3A%2F%2Fwestciv.com%2Ftools%2Fshadows%2F&t=1334692293384&_=1334692293449" for 127.0.0.1 at 2012-04-17 15:51:33 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery172014007149077951908_1334692293447", "u"=>"http://westciv.com/tools/shadows/", "t"=>"1334692293384", "_"=>"1334692293449", "s"=>"add"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://westciv.com/tools/shadows/' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "bookmarks" ("created_at", "original_url", "remote_ref", "title", "type", "updated_at", "uuid") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 17 Apr 2012 19:51:33 UTC +00:00], ["original_url", "http://westciv.com/tools/shadows/"], ["remote_ref", nil], ["title", nil], ["type", nil], ["updated_at", Tue, 17 Apr 2012 19:51:33 UTC +00:00], ["uuid", nil]]
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 4)[0m
+Completed 200 OK in 41ms (Views: 0.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwestciv.com%2Ftools%2Fshadows%2F&t=1334692461839" for 127.0.0.1 at 2012-04-17 15:54:21 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://westciv.com/tools/shadows/", "t"=>"1334692461839"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 20ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/s/add?callback=jQuery17201400477234274149_1334692461927&u=http%3A%2F%2Fwestciv.com%2Ftools%2Fshadows%2F&t=1334692461839&_=1334692461930" for 127.0.0.1 at 2012-04-17 15:54:21 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery17201400477234274149_1334692461927", "u"=>"http://westciv.com/tools/shadows/", "t"=>"1334692461839", "_"=>"1334692461930", "s"=>"add"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://westciv.com/tools/shadows/' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 4)[0m
+Completed 200 OK in 59ms (Views: 0.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwestciv.com%2Ftools%2Fshadows%2F&t=1334692633319" for 127.0.0.1 at 2012-04-17 15:57:13 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://westciv.com/tools/shadows/", "t"=>"1334692633319"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 39ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/s/add?callback=jQuery17207395694979932159_1334692633404&u=http%3A%2F%2Fwestciv.com%2Ftools%2Fshadows%2F&t=1334692633319&_=1334692633406" for 127.0.0.1 at 2012-04-17 15:57:13 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery17207395694979932159_1334692633404", "u"=>"http://westciv.com/tools/shadows/", "t"=>"1334692633319", "_"=>"1334692633406", "s"=>"add"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://westciv.com/tools/shadows/' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 4)[0m
+Completed 200 OK in 58ms (Views: 0.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwestciv.com%2Ftools%2Fshadows%2F&t=1334692647073" for 127.0.0.1 at 2012-04-17 15:57:27 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://westciv.com/tools/shadows/", "t"=>"1334692647073"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 20ms (Views: 2.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/s/add?callback=jQuery17203461628940422088_1334692647136&u=http%3A%2F%2Fwestciv.com%2Ftools%2Fshadows%2F&t=1334692647073&_=1334692647138" for 127.0.0.1 at 2012-04-17 15:57:27 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery17203461628940422088_1334692647136", "u"=>"http://westciv.com/tools/shadows/", "t"=>"1334692647073", "_"=>"1334692647138", "s"=>"add"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://westciv.com/tools/shadows/' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 4)[0m
+Completed 500 Internal Server Error in 74ms
+
+ActionView::MissingTemplate (Missing template jQuery17203461628940422088_1334692647136({:callbak=>"jQuery17203461628940422088_1334692647136", :response=>"true", :content=>#<Bookmark id: 4, type: nil, uuid: nil, title: nil, original_url: "http://westciv.com/tools/shadows/", remote_ref: nil, created_at: "2012-04-17 19:51:33", updated_at: "2012-04-17 19:51:33">}) with {:handlers=>[:erb, :builder, :coffee], :formats=>[:html, :text, :js, :css, :ics, :csv, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json], :locale=>[:en, :en]}. Searched in:
+  * "/Users/mga/Documents/tagger/app/views"
+  * "/Users/mga/Documents/tagger"
+  * "/"
+):
+  app/controllers/remote_controller.rb:39:in `service'
+
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.4ms)
+
+
+Started GET "/s/u=hello&callback=foo" for 127.0.0.1 at 2012-04-17 15:58:38 -0400
+  Processing by RemoteController#service as HTML
+  Parameters: {"s"=>"u=hello&callback=foo"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Completed 200 OK in 37ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/s/new?u=hello&callback=foo" for 127.0.0.1 at 2012-04-17 15:58:49 -0400
+  Processing by RemoteController#service as HTML
+  Parameters: {"u"=>"hello", "callback"=>"foo", "s"=>"new"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Completed 200 OK in 18ms (Views: 0.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/s/add?u=hello&callback=foo" for 127.0.0.1 at 2012-04-17 15:59:05 -0400
+  Processing by RemoteController#service as HTML
+  Parameters: {"u"=>"hello", "callback"=>"foo", "s"=>"add"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'hello' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "bookmarks" ("created_at", "original_url", "remote_ref", "title", "type", "updated_at", "uuid") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 17 Apr 2012 19:59:05 UTC +00:00], ["original_url", "hello"], ["remote_ref", nil], ["title", nil], ["type", nil], ["updated_at", Tue, 17 Apr 2012 19:59:05 UTC +00:00], ["uuid", nil]]
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 5)[0m
+Completed 500 Internal Server Error in 65ms
+
+ActionView::MissingTemplate (Missing template remote/foo({"callbak":"foo","response":true,"content":{"created_at":"2012-04-17T19:59:05Z","id":5,"original_url":"hello","remote_ref":null,"title":null,"updated_at":"2012-04-17T19:59:05Z","uuid":null}}), application/foo({"callbak":"foo","response":true,"content":{"created_at":"2012-04-17T19:59:05Z","id":5,"original_url":"hello","remote_ref":null,"title":null,"updated_at":"2012-04-17T19:59:05Z","uuid":null}}) with {:handlers=>[:erb, :builder, :coffee], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "/Users/mga/Documents/tagger/app/views"
+):
+  app/controllers/remote_controller.rb:39:in `service'
+
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.3ms)
+
+
+Started GET "/s/add?u=hello&callback=foo" for 127.0.0.1 at 2012-04-17 15:59:23 -0400
+  Processing by RemoteController#service as HTML
+  Parameters: {"u"=>"hello", "callback"=>"foo", "s"=>"add"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'hello' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 5)
+Rendered text template (0.0ms)
+Completed 200 OK in 123ms (Views: 62.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwestciv.com%2Ftools%2Fshadows%2F&t=1334692775002" for 127.0.0.1 at 2012-04-17 15:59:35 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://westciv.com/tools/shadows/", "t"=>"1334692775002"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 19ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/s/add?callback=jQuery172029669259185902774_1334692775066&u=http%3A%2F%2Fwestciv.com%2Ftools%2Fshadows%2F&t=1334692775002&_=1334692775069" for 127.0.0.1 at 2012-04-17 15:59:35 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery172029669259185902774_1334692775066", "u"=>"http://westciv.com/tools/shadows/", "t"=>"1334692775002", "_"=>"1334692775069", "s"=>"add"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://westciv.com/tools/shadows/' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 4)
+Rendered text template (0.0ms)
+Completed 200 OK in 64ms (Views: 1.4ms | ActiveRecord: 1.2ms)

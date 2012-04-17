@@ -31,7 +31,13 @@ class RemoteController < ApplicationController
         )
         @current_user.bookmarks << @bookmark
         @success = @current_user.save!
-        render :json => {:response=>@success.to_json, :content=>@bookmark}, :layout => false
+        if params[:callback] == nil
+          render :json => {:callbak=>params[:callback], :response=>@success.to_json, :content=>@bookmark}, :layout => false
+        else
+          output = {:callbak=>params[:callback], :response=>@success.to_json, :content=>@bookmark}.to_json
+          json = "#{params[:callback]}(#{output})"
+          render :text => json, :layout => false
+        end
       else
         render :json => {:response=>"error",:content=>"No url"}, :layout => false
       end
