@@ -7803,3 +7803,198 @@ Started GET "/s/add?callback=jQuery17106060204769019037_1334696152482&u=http%3A%
   [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Bookmark' AND (taggings.context = 'original_url')[0m
 Rendered text template (0.0ms)
 Completed 200 OK in 87ms (Views: 1.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/patrons/1" for 127.0.0.1 at 2012-04-17 16:57:49 -0400
+  Processing by PatronsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mPatron Load (0.2ms)[0m  [1mSELECT "patrons".* FROM "patrons" WHERE "patrons"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mLibLocation Load (0.4ms)[0m  SELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'LibLocation' ORDER BY title
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'Event' ORDER BY title[0m
+  [1m[35mBookmark Load (0.3ms)[0m  SELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'Bookmark' ORDER BY title
+  [1m[36mEbook Load (0.3ms)[0m  [1mSELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'Ebook' ORDER BY title[0m
+  [1m[35mDgImage Load (0.3ms)[0m  SELECT DISTINCT "bookmarks".* FROM "bookmarks" INNER JOIN "bookmarks_patrons" ON "bookmarks"."id" = "bookmarks_patrons"."bookmark_id" WHERE "bookmarks_patrons"."patron_id" = 1 AND "bookmarks"."type" = 'DgImage' ORDER BY title
+Rendered patrons/show.html.erb within layouts/application (70.7ms)
+Completed 200 OK in 81ms (Views: 76.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-17 16:57:49 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-17 16:57:49 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-17 16:57:49 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-17 16:57:49 -0400
+Served asset /patrons.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-04-17 16:57:49 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-17 16:57:49 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-17 16:57:49 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-17 16:57:49 -0400
+Served asset /bookmarks.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-17 16:57:49 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-17 16:57:49 -0400
+Served asset /patrons.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-17 16:57:49 -0400
+Served asset /remote.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-04-17 16:57:49 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-17 16:57:49 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fake-profile-1.png" for 127.0.0.1 at 2012-04-17 16:57:50 -0400
+Served asset /fake-profile-1.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-04-17 16:57:50 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fake-followers.png" for 127.0.0.1 at 2012-04-17 16:57:50 -0400
+Served asset /fake-followers.png - 304 Not Modified (1ms)
+
+
+Started GET "/patrons" for 127.0.0.1 at 2012-04-17 16:57:55 -0400
+  Processing by PatronsController#index as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.2ms)[0m  SELECT "bookmarks".* FROM "bookmarks" ORDER BY created_at DESC LIMIT 20
+  [1m[36mPatron Load (0.3ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 5 LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 5 AND "taggings"."taggable_type" = 'Bookmark' AND (taggings.context = 'original_url')[0m
+Rendered patrons/index.html.erb within layouts/application (81.5ms)
+Completed 500 Internal Server Error in 107ms
+
+ActionView::Template::Error (Nil location provided. Can't build URI.):
+    11: 		<li>
+    12: 			<%= image_tag "fake-profile-#{bookmark.patrons.first.id}.png", :height => 40 %>
+    13: 			<%= link_to bookmark.patrons.first.full_name, bookmark.patrons.first %> 
+    14: 			bookmarked <%= link_to image_tag(bookmark.thumbnail_image_address, :height => 40), bookmark.link if bookmark.type == "DgImage" %> <%= link_to bookmark.title, bookmark.link %>.
+    15: 		</li>
+    16: 	<% end %>
+    17: 
+  app/views/patrons/index.html.erb:14:in `block in _app_views_patrons_index_html_erb__3293807427918700235_70315246192120'
+  app/views/patrons/index.html.erb:8:in `each'
+  app/views/patrons/index.html.erb:8:in `_app_views_patrons_index_html_erb__3293807427918700235_70315246192120'
+  app/controllers/patrons_controller.rb:6:in `index'
+
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-17 16:59:23 -0400
+  Processing by TagController#help as HTML
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/help.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 53ms (Views: 16.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-17 16:59:23 -0400
+Served asset /application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-17 16:59:23 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-17 16:59:23 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-17 16:59:23 -0400
+Served asset /patrons.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-17 16:59:23 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-04-17 16:59:23 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-17 16:59:23 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-17 16:59:23 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-17 16:59:23 -0400
+Served asset /bookmarks.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-17 16:59:23 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-04-17 16:59:23 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-17 16:59:23 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-17 16:59:23 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-04-17 16:59:23 -0400
+Served asset /tag.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-04-17 16:59:23 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Flocalhost%3A3000%2F&t=1334696367839" for 127.0.0.1 at 2012-04-17 16:59:27 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://localhost:3000/", "t"=>"1334696367839"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.5ms)
+Rendered tag/new.html.erb (1.0ms)
+Completed 200 OK in 42ms (Views: 2.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/s/add?callback=jQuery17104801250146701932_1334696363453&u=http%3A%2F%2Flocalhost%3A3000%2F&t=1334696367839&_=1334696372256" for 127.0.0.1 at 2012-04-17 16:59:32 -0400
+  Processing by RemoteController#service as JS
+  Parameters: {"callback"=>"jQuery17104801250146701932_1334696363453", "u"=>"http://localhost:3000/", "t"=>"1334696367839", "_"=>"1334696372256", "s"=>"add"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://localhost:3000/' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 3)
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 3 AND "taggings"."taggable_type" = 'Bookmark' AND (taggings.context = 'original_url')[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 85ms (Views: 1.4ms | ActiveRecord: 1.6ms)
