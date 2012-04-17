@@ -15,7 +15,7 @@ group :production do
 end
 
 # sass-rails > 3.1.4 fails precompile on heroku cedar
-gem 'sass-rails',   '~> 3.1.4'
+gem 'sass-rails',   '3.1.4'
 
 # Gems used only for assets and not required
 # in production environments by default.
