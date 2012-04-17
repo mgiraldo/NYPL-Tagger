@@ -1,6 +1,53 @@
 (
 	function () {
-		alert("tagging url: <%=params[:u]%> time: <%=params[:t]%>");
-		if (document.title.substring(0, 12) == '(Saving...) ') document.title = document.title.substring(12);
+		if (!($ = window.jQuery)) { // typeof jQuery=='undefined' works too
+			script = document.createElement( 'script' );
+		   script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js';
+			script.onload=proceed;
+			document.body.appendChild(script);
+		}
+		else {
+			proceed();
+		}
+		
+		function proceed() {
+			// add visual indicator that we're saving
+			var myUUID = "nypl_"+guid();
+			var divID = "#"+myUUID;
+			var html = '<div id=' + myUUID + '><div class="text' + myUUID + '">Tagging...</div></div>';
+			$('body').prepend(html);
+			$(divID).css("background-color", "rgba(0,0,0,0.75)");
+			$(divID).css("position", "absolute");
+			$(divID).css("z-index", "10000001");
+			$(divID).css("width", "100%");
+			$(divID).css("height", "100%");
+			$(divID).css("color", "#fff");
+			$(divID).css("font-size", "40px");
+			$(divID).css("text-align", "center");
+			$(divID).css("text-shadow", "#000 -3px 2px 0");
+			$(divID).css("font-family", "Helvetica, Arial, sans-serif");
+			$(divID + " div.text" + myUUID).css("margin-top", "60px");
+			// add the bookmark
+			$.ajax({
+			  url: '<%="http://#{request.host_with_port}/s/add"%>',
+			  type:"GET",
+			  data: {<%="u:'#{params[:u]}',t:'#{params[:t]}'"%>}
+			}).done(function(msg) {
+			  console.log(msg);
+			  $(divID + " div.text" + myUUID).html('Done!');
+			  $(divID).delay(200).fadeOut();
+			  // revert title to original state
+			  if (document.title.substring(0, 12) == '(Saving...) ') document.title = document.title.substring(12);
+			});
+			
+		}
+		function remove(id) {
+		}
+		function S4() {
+		   return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+		}
+		function guid() {
+		   return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+		}
 	}
 )();

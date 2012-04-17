@@ -11,4 +11,7 @@ Tagger::Application.routes.draw do
 
   match 'remote/:action', :controller => 'remote'
 
+  match 's/:s', :to => 'remote#service'
+  match 's', :to => 'remote#service'
+
 end

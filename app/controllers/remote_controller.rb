@@ -20,5 +20,24 @@ class RemoteController < ApplicationController
         format.js
       end
   end
+  
+  def service
+    if params[:s]=="add"
+      url = params[:u]
+      time = params[:t]
+      if url != nil
+        @bookmark = Bookmark.find_or_create_by_original_url(
+          :original_url => url
+        )
+        @current_user.bookmarks << @bookmark
+        @success = @current_user.save!
+        render :json => {:response=>@success.to_json, :content=>@bookmark}, :layout => false
+      else
+        render :json => {:response=>"error",:content=>"No url"}, :layout => false
+      end
+    else
+      render :json => {:response=>"error",:content=>"Tagger by NYPL Labs"}
+    end
+  end
 
 end

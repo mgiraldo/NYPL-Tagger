@@ -101,7 +101,7 @@ li {
 #toolbar {
 	margin: 0;
 	color: #fff;
-	background: #887E6E url(/images/bg_toolbar.png) 0 -1px no-repeat scroll;
+	background: #887E6E asset-url("bg_toolbar.png",image) 0 -1px no-repeat scroll;
 	font-family: "Lucida Grande";
 	font-size: 11px;
 	padding: 4px 1em 0 150px;
