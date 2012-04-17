@@ -7,6 +7,7 @@
 			document.body.appendChild(script);
 		}
 		else {
+			goModal();
 			proceed();
 		}
 		
@@ -34,14 +35,28 @@
 			  dataType:"jsonp",
 			  data: {<%="u:'#{params[:u]}',t:'#{params[:t]}'"%>}
 			}).done(function(msg) {
-			  console.log(msg);
 			  $(divID + " div.text" + myUUID).html('Done!');
 			  $(divID).delay(200).fadeOut();
 			  // revert title to original state
 			  if (document.title.substring(0, 12) == '(Saving...) ') document.title = document.title.substring(12);
 			});
-			
 		}
+		function goModal() {
+			notes='encodeURIComponent(';
+			notes+=' (window.getSelection ? window.getSelection() : document.getSelection ? document.getSelection() : document.selection.createRange().text)';
+			notes+=')';
+			alert("you selected: " + eval(notes));
+		    if (/Firefox/.test(navigator.userAgent)) {
+		        //setTimeout(a, 0);
+		    } else {
+		        //a();
+		    }
+		}
+		function a () {
+	        if (!window.open(form + 'noui=1&jump=doclose', 'nyplt1', 'location=1,links=0,scrollbars=0,toolbar=0,width=550,height=585')) {
+	        	location.href = form + '?jump=yes';
+	        }
+	    };
 		function remove(id) {
 		}
 		function S4() {

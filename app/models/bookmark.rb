@@ -1,5 +1,7 @@
 class Bookmark < ActiveRecord::Base
   
+  acts_as_taggable
+  acts_as_taggable_on :original_url
   has_and_belongs_to_many :patrons, :uniq => true
   
   def before_save
