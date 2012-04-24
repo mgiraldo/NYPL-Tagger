@@ -25,9 +25,9 @@ class BookmarksController < ApplicationController
   # GET /bookmarks/new.json
   def new
     @bookmark = Bookmark.new
-
+    @bookmark.original_url = params[:url]
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render :layout => "mini" }
       format.json { render json: @bookmark }
     end
   end
@@ -41,15 +41,10 @@ class BookmarksController < ApplicationController
   # POST /bookmarks.json
   def create
     @bookmark = Bookmark.new(params[:bookmark])
+    @bookmark.tag_list = params[:tags].tr(" ",",")
 
-    respond_to do |format|
-      if @bookmark.save
-        format.html { redirect_to @bookmark, notice: 'Bookmark was successfully created.' }
-        format.json { render json: @bookmark, status: :created, location: @bookmark }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @bookmark.errors, status: :unprocessable_entity }
-      end
+    if @bookmark.save
+      flash[:notice] =  'Bookmark was successfully created.'
     end
   end
 

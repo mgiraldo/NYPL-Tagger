@@ -7,8 +7,8 @@
 			document.body.appendChild(script);
 		}
 		else {
-			goModal();
-			proceed();
+	        goModal();
+			//proceed();
 		}
 		
 		function proceed() {
@@ -42,18 +42,19 @@
 			});
 		}
 		function goModal() {
-			notes='encodeURIComponent(';
-			notes+=' (window.getSelection ? window.getSelection() : document.getSelection ? document.getSelection() : document.selection.createRange().text)';
-			notes+=')';
-			alert("you selected: " + eval(notes));
 		    if (/Firefox/.test(navigator.userAgent)) {
-		        //setTimeout(a, 0);
+		        setTimeout(a, 0);
 		    } else {
-		        //a();
+		        a();
 		    }
 		}
 		function a () {
-	        if (!window.open(form + 'noui=1&jump=doclose', 'nyplt1', 'location=1,links=0,scrollbars=0,toolbar=0,width=550,height=585')) {
+			f = '<%="http://#{request.host_with_port}/save"%>?url=';
+			f += encodeURIComponent("<%="#{params[:u]}"%>") + '&title=';
+			f += encodeURIComponent("NYPL Tagger") + '&notes=';
+			f += encodeURIComponent(''+(window.getSelection ? window.getSelection() : document.getSelection ? document.getSelection() : document.selection.createRange().text))+'&v=6&';
+			alert(f);
+	        if (!window.open(f + 'noui=1&jump=doclose', 'nyplt1', 'location=1,links=0,scrollbars=0,toolbar=0,width=550,height=585')) {
 	        	location.href = form + '?jump=yes';
 	        }
 	    };

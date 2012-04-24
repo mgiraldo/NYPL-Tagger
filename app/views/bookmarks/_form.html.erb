@@ -1,4 +1,4 @@
-<%= form_for(@bookmark) do |f| %>
+<%= form_for(@bookmark, :remote => true) do |f| %>
   <% if @bookmark.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@bookmark.errors.count, "error") %> prohibited this bookmark from being saved:</h2>
@@ -11,6 +11,17 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+   URL:  <span id="bookmark_link"><%= @bookmark[:original_url] %></span>
+    <%= f.hidden_field :original_url %>
+  </div>
+  <div class="field">
+	<%= text_field_tag "tags", "", {:placeholder=>"Type a tag"} %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
