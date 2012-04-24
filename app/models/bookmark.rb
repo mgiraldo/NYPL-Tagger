@@ -3,9 +3,7 @@ class Bookmark < ActiveRecord::Base
   acts_as_taggable
   has_and_belongs_to_many :patrons, :uniq => true
   
-  def before_save
-    parse(self.original_url)
-  end
+  before_save :parse_original_url
   
   def link
     self.original_url
@@ -18,8 +16,9 @@ class Bookmark < ActiveRecord::Base
 private 
 
   # Takes a URL and decides which type of bookmark it is
-  def parse(url)
-    case url
+  def parse_original_url
+    self.title ||= self.original_url
+    case self.original_url
     when /digitalgallery\.nypl\.org/ && /imageID/
       self.type = "DgImage"
       self.remote_ref = self.original_url.gsub(/^.*imageID=([^&]+).*$/, '\1')
