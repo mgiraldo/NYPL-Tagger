@@ -1,19 +1,17 @@
 (
 	function () {
-		if (!($ = window.jQuery)) { // typeof jQuery=='undefined' works too
+		//if (!($ = window.jQuery)) { // typeof jQuery=='undefined' works too
 			script = document.createElement( 'script' );
-		   script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js';
+		    script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js';
 			script.onload=proceed;
 			document.body.appendChild(script);
-		} else {
-			proceed();
-		}
-		var divID;
-		var myUUID;
+		//} else {
+		//	proceed();
+		//}
 		function proceed() {
 			// add visual indicator that we're saving
-			myUUID = "nypl_"+guid();
-			divID = "#"+myUUID;
+			var myUUID = "nypl_"+guid();
+			var divID = "#"+myUUID;
 			var html = '<div id="' + myUUID + '"></div>';
 			$('body').prepend(html);
 			$(divID).css("background-color", "rgba(0,0,0,0.75)");
@@ -54,11 +52,11 @@
 			$("#tag_"+myUUID).focus();
 			// for escape key
 			$(document).keyup(function(e) {
-				if (e.keyCode == 13) { saveURL($("#tag_"+myUUID).val()); }     // enter
-				if (e.keyCode == 27) { remove(); }   // esc
+				if (e.keyCode == 13) { saveURL(myUUID); }     // enter
+				if (e.keyCode == 27) { remove(myUUID); }   // esc
 			});
 			$("#a_"+myUUID).click(function() {
-				saveURL($("#tag_"+myUUID).val());
+				saveURL(myUUID);
 			});
 			// execute
 		}
@@ -79,23 +77,28 @@
 	        	location.href = form + '?jump=yes';
 	        }
 	    };
-	    function saveURL (tags) {
+	    function saveURL (uuid) {
+	    	var myUUID = uuid;
+			var divID = "#"+myUUID;
+	    	var tags = $("#tag_"+myUUID).val();
 			var sel = ''+(window.getSelection ? window.getSelection() : document.getSelection ? document.getSelection() : document.selection.createRange().text);
 			$.ajax({
 			  url: '<%="http://#{request.host_with_port}/s/add"%>',
 			  type:"GET",
 			  dataType:"jsonp",
-			  data: {<%="u:'#{params[:u]}',t:document.title,i:'#{params[:t]}',s:sel,a:tags"%>}
+			  data: {<%="u:'#{params[:u]}',t:(document.title.substring(0, 12) == '(Saving...) ') ? document.title.substring(12) : document.title,i:'#{params[:t]}',s:sel,a:tags"%>}
 			}).done(function(msg) {
 			  $(divID + " div.txt_" + myUUID).html('Done!');
 			  // revert title to original state
-			  $(divID).delay(200).fadeOut(50,function(){remove();});
+			  $(divID).delay(200).fadeOut(50,function(){remove(myUUID);});
 			});
 			var msghtml = '<div class="txt_' + myUUID + '">Tagging...</div>';
 			$("#f_" + myUUID).replaceWith(msghtml);
 			$(".txt_"+myUUID).css("margin-top", "60px");
 	    }
-		function remove() {
+		function remove(uuid) {
+	    	var myUUID = uuid;
+			var divID = "#"+myUUID;
 			$(divID).remove();
 			if (document.title.substring(0, 12) == '(Saving...) ') document.title = document.title.substring(12);
 		}

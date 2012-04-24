@@ -41,7 +41,7 @@ class BookmarksController < ApplicationController
   # POST /bookmarks.json
   def create
     @bookmark = Bookmark.new(params[:bookmark])
-    @bookmark.tag_list = params[:tags].tr(" ",",")
+    @bookmark.tag_list = params[:tags]
 
     if @bookmark.save
       flash[:notice] =  'Bookmark was successfully created.'

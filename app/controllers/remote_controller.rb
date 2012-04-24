@@ -26,11 +26,11 @@ class RemoteController < ApplicationController
       url = params[:u]
       title = params[:t]
       time = params[:i]
-      tag_list = params[:a].tr(" ",",")
+      tag_list = params[:a]
       if url != nil
         @bookmark = Bookmark.find_or_create_by_original_url(
-          :original_url => url, :title => title, :tag_list => tag_list
-        )
+          url, :title => title
+        ){ |b| b.tag_list = tag_list }
         @current_user.bookmarks << @bookmark
         @success = @current_user.save!
         if params[:callback] == nil

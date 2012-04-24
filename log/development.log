@@ -11667,3 +11667,1058 @@ Migrating to ActsAsTaggableOnMigration (20120417203226)
   [1m[35m (0.0ms)[0m  PRAGMA index_info('index_taggings_on_taggable_id_and_taggable_type_and_context')
   [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_taggings_on_tag_id')[0m
   [1m[35m (0.0ms)[0m  PRAGMA index_list("tags")
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.nypl.org%2F&t=1335293823583" for 127.0.0.1 at 2012-04-24 14:57:03 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.nypl.org/", "t"=>"1335293823583"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.7ms)
+Rendered tag/new.html.erb (26.5ms)
+Completed 200 OK in 109ms (Views: 33.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/s/add?callback=jsonp1335293821542&_=1335293831675&u=http%3A%2F%2Fwww.nypl.org%2F&t=(Saving...)+Welcome+to+The+New+York+Public+Library&i=1335293823583&s=&a=nypl+library" for 127.0.0.1 at 2012-04-24 14:57:11 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jsonp1335293821542", "_"=>"1335293831675", "u"=>"http://www.nypl.org/", "t"=>"(Saving...) Welcome to The New York Public Library", "i"=>"1335293823583", "s"=>"add", "a"=>"nypl library"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.2ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.nypl.org/' LIMIT 1[0m
+  [1m[35mSQL (4.5ms)[0m  INSERT INTO "bookmarks" ("created_at", "original_url", "remote_ref", "title", "type", "updated_at", "uuid") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 24 Apr 2012 18:57:11 UTC +00:00], ["original_url", "http://www.nypl.org/"], ["remote_ref", nil], ["title", "(Saving...) Welcome to The New York Public Library"], ["type", "Bookmark"], ["updated_at", Tue, 24 Apr 2012 18:57:11 UTC +00:00], ["uuid", nil]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (name LIKE 'nypl' ESCAPE '!' OR name LIKE 'library' ESCAPE '!')[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "tags" WHERE "tags"."name" = 'nypl' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tags" ("name") VALUES (?)[0m  [["name", "nypl"]]
+  [1m[35m (0.0ms)[0m  SELECT 1 FROM "tags" WHERE "tags"."name" = 'library' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("name") VALUES (?)[0m  [["name", "library"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 6 AND "taggings"."taggable_type" = 'Bookmark' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 6 AND "taggings"."taggable_type" = 'Bookmark' AND "taggings"."tagger_type" IS NULL AND "taggings"."tagger_id" IS NULL AND "taggings"."context" = 'tags' AND "taggings"."tag_id" IN (NULL)[0m
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "taggings" WHERE ("taggings"."tag_id" = 9 AND "taggings"."taggable_type" = 'Bookmark' AND "taggings"."taggable_id" = 6 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["context", "tags"], ["created_at", Tue, 24 Apr 2012 18:57:11 UTC +00:00], ["tag_id", 9], ["taggable_id", 6], ["taggable_type", "Bookmark"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "taggings" WHERE ("taggings"."tag_id" = 10 AND "taggings"."taggable_type" = 'Bookmark' AND "taggings"."taggable_id" = 6 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["context", "tags"], ["created_at", Tue, 24 Apr 2012 18:57:11 UTC +00:00], ["tag_id", 10], ["taggable_id", 6], ["taggable_type", "Bookmark"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[35m (0.3ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 6)
+Rendered text template (0.0ms)
+Completed 200 OK in 212ms (Views: 2.2ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Flocalhost%3A3000%2F&t=1335294046745" for 127.0.0.1 at 2012-04-24 15:00:46 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://localhost:3000/", "t"=>"1335294046745"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.6ms)
+Rendered tag/new.html.erb (1.1ms)
+Completed 200 OK in 20ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/s/add?callback=jQuery17103780390617903322_1335293596074&u=http%3A%2F%2Flocalhost%3A3000%2F&t=Tagger&i=1335294046745&s=&a=my&_=1335294049196" for 127.0.0.1 at 2012-04-24 15:00:49 -0400
+  Processing by RemoteController#service as JS
+  Parameters: {"callback"=>"jQuery17103780390617903322_1335293596074", "u"=>"http://localhost:3000/", "t"=>"Tagger", "i"=>"1335294046745", "s"=>"add", "a"=>"my", "_"=>"1335294049196"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://localhost:3000/' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 1)
+Rendered text template (0.0ms)
+Completed 200 OK in 93ms (Views: 1.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.nypl.org%2F&t=1335294063332" for 127.0.0.1 at 2012-04-24 15:01:03 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.nypl.org/", "t"=>"1335294063332"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 20ms (Views: 2.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/s/add?callback=jsonp1335293821543&_=1335294066756&u=http%3A%2F%2Fwww.nypl.org%2F&t=Welcome+to+The+New+York+Public+Library&i=1335294063332&s=&a=boo" for 127.0.0.1 at 2012-04-24 15:01:06 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jsonp1335293821543", "_"=>"1335294066756", "u"=>"http://www.nypl.org/", "t"=>"Welcome to The New York Public Library", "i"=>"1335294063332", "s"=>"add", "a"=>"boo"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.nypl.org/' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 6)
+Rendered text template (0.0ms)
+Completed 200 OK in 70ms (Views: 1.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.nypl.org%2F&t=1335294105630" for 127.0.0.1 at 2012-04-24 15:01:45 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.nypl.org/", "t"=>"1335294105630"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 20ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.nypl.org%2F&t=1335294151887" for 127.0.0.1 at 2012-04-24 15:02:31 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.nypl.org/", "t"=>"1335294151887"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/_tagger.js.erb (0.6ms)
+Rendered tag/new.html.erb (1.1ms)
+Completed 200 OK in 39ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.nypl.org%2F&t=1335294153425" for 127.0.0.1 at 2012-04-24 15:02:33 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.nypl.org/", "t"=>"1335294153425"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.7ms)
+Completed 200 OK in 20ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.nypl.org%2F&t=1335294155346" for 127.0.0.1 at 2012-04-24 15:02:35 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.nypl.org/", "t"=>"1335294155346"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 20ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.nypl.org%2F&t=1335294162180" for 127.0.0.1 at 2012-04-24 15:02:42 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.nypl.org/", "t"=>"1335294162180"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 38ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.nypl.org%2F&t=1335294221189" for 127.0.0.1 at 2012-04-24 15:03:41 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.nypl.org/", "t"=>"1335294221189"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/_tagger.js.erb (0.6ms)
+Rendered tag/new.html.erb (1.1ms)
+Completed 200 OK in 21ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-24 15:03:47 -0400
+  Processing by TagController#help as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/help.html.erb within layouts/application (0.3ms)
+Compiled application.js  (44ms)  (pid 5512)
+Completed 200 OK in 114ms (Views: 96.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-24 15:03:47 -0400
+Served asset /application.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-24 15:03:47 -0400
+Served asset /global.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-24 15:03:47 -0400
+Served asset /bookmarks.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-24 15:03:47 -0400
+Served asset /patrons.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-24 15:03:47 -0400
+Served asset /remote.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-04-24 15:03:47 -0400
+Served asset /tag.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-24 15:03:47 -0400
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-24 15:03:47 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-24 15:03:47 -0400
+Served asset /bookmarks.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-24 15:03:47 -0400
+Served asset /patrons.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-24 15:03:47 -0400
+Served asset /remote.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-04-24 15:03:47 -0400
+Served asset /tag.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-24 15:03:47 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-04-24 15:03:47 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-04-24 15:03:47 -0400
+Served asset /tag.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Flocalhost%3A3000%2F&t=1335294237017" for 127.0.0.1 at 2012-04-24 15:03:57 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://localhost:3000/", "t"=>"1335294237017"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 40ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-24 16:01:20 -0400
+  Processing by TagController#help as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/help.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 55ms (Views: 16.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-24 16:01:20 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-24 16:01:20 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-24 16:01:20 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-24 16:01:20 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-24 16:01:20 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-04-24 16:01:20 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-24 16:01:20 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-24 16:01:20 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-24 16:01:20 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-24 16:01:20 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-24 16:01:20 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-04-24 16:01:20 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-24 16:01:20 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-04-24 16:01:20 -0400
+Served asset /tag.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-04-24 16:01:20 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Flocalhost%3A3000%2F&t=1335297682225" for 127.0.0.1 at 2012-04-24 16:01:22 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://localhost:3000/", "t"=>"1335297682225"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/_tagger.js.erb (0.6ms)
+Rendered tag/new.html.erb (1.2ms)
+Completed 200 OK in 41ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-24 16:05:14 -0400
+  Processing by TagController#help as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/help.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 53ms (Views: 35.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:14 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:14 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:14 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:14 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:14 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:14 -0400
+Served asset /remote.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:14 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:14 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:14 -0400
+Served asset /bookmarks.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:14 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:14 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:14 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:14 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-04-24 16:05:14 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-04-24 16:05:14 -0400
+Served asset /tag.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-24 16:05:24 -0400
+  Processing by TagController#help as HTML
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/help.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 54ms (Views: 37.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:24 -0400
+Served asset /bookmarks.css - 200 OK (4ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:24 -0400
+Served asset /patrons.css - 200 OK (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:24 -0400
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:24 -0400
+Served asset /global.css - 200 OK (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:24 -0400
+Served asset /remote.css - 200 OK (0ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:24 -0400
+Served asset /tag.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:24 -0400
+Served asset /jquery.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:24 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:24 -0400
+Served asset /bookmarks.js - 200 OK (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:24 -0400
+Served asset /patrons.js - 200 OK (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:24 -0400
+Served asset /remote.js - 200 OK (1ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:24 -0400
+Served asset /tag.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:24 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-04-24 16:05:24 -0400
+Served asset /bg_toolbar.png - 200 OK (0ms)
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-04-24 16:05:24 -0400
+Served asset /tag.jpg - 200 OK (0ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Flocalhost%3A3000%2F&t=1335297926358" for 127.0.0.1 at 2012-04-24 16:05:26 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://localhost:3000/", "t"=>"1335297926358"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 19ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-24 16:05:43 -0400
+  Processing by TagController#help as HTML
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/help.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 33ms (Views: 15.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:43 -0400
+Served asset /bookmarks.css - 200 OK (1ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:43 -0400
+Served asset /tag.css - 200 OK (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:43 -0400
+Served asset /remote.css - 200 OK (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:43 -0400
+Served asset /patrons.css - 200 OK (1ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:43 -0400
+Served asset /global.css - 200 OK (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-24 16:05:43 -0400
+Served asset /application.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:43 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:43 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:43 -0400
+Served asset /bookmarks.js - 200 OK (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:43 -0400
+Served asset /patrons.js - 200 OK (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:43 -0400
+Served asset /remote.js - 200 OK (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:43 -0400
+Served asset /tag.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-24 16:05:43 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-04-24 16:05:43 -0400
+Served asset /tag.jpg - 200 OK (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-04-24 16:05:43 -0400
+Served asset /bg_toolbar.png - 200 OK (0ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Flocalhost%3A3000%2F&t=1335297948281" for 127.0.0.1 at 2012-04-24 16:05:48 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://localhost:3000/", "t"=>"1335297948281"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 19ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-24 16:06:00 -0400
+  Processing by TagController#help as HTML
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/help.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 55ms (Views: 16.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:00 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:00 -0400
+Served asset /bookmarks.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:00 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:00 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:00 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:00 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:00 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:00 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:01 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:01 -0400
+Served asset /patrons.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:01 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:01 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:01 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-04-24 16:06:01 -0400
+Served asset /tag.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-04-24 16:06:01 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Flocalhost%3A3000%2F&t=1335297962494" for 127.0.0.1 at 2012-04-24 16:06:02 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://localhost:3000/", "t"=>"1335297962494"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 41ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-24 16:06:09 -0400
+  Processing by TagController#help as HTML
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/help.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 53ms (Views: 35.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:10 -0400
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:10 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:10 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:10 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:10 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:10 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:10 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:10 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:10 -0400
+Served asset /patrons.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:10 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:10 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:10 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:10 -0400
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-04-24 16:06:10 -0400
+Served asset /tag.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-04-24 16:06:10 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-24 16:06:11 -0400
+  Processing by TagController#help as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/help.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 54ms (Views: 37.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:11 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:11 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:11 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:11 -0400
+Served asset /remote.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:11 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-24 16:06:11 -0400
+Served asset /patrons.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:11 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:11 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:11 -0400
+Served asset /bookmarks.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:11 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:11 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:11 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-24 16:06:11 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-04-24 16:06:11 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-04-24 16:06:11 -0400
+Served asset /tag.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Flocalhost%3A3000%2F&t=1335297975524" for 127.0.0.1 at 2012-04-24 16:06:15 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://localhost:3000/", "t"=>"1335297975524"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 19ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-24 16:07:15 -0400
+  Processing by TagController#help as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/help.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 33ms (Views: 16.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-04-24 16:07:15 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-04-24 16:07:15 -0400
+Served asset /bookmarks.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-04-24 16:07:15 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-04-24 16:07:15 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-04-24 16:07:15 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-04-24 16:07:15 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-24 16:07:15 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-24 16:07:15 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-04-24 16:07:15 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-04-24 16:07:15 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-04-24 16:07:15 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-04-24 16:07:15 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-24 16:07:15 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-04-24 16:07:15 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-04-24 16:07:15 -0400
+Served asset /tag.jpg - 304 Not Modified (0ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Flocalhost%3A3000%2F&t=1335298037067" for 127.0.0.1 at 2012-04-24 16:07:17 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://localhost:3000/", "t"=>"1335298037067"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/_tagger.js.erb (0.6ms)
+Rendered tag/new.html.erb (1.1ms)
+Completed 200 OK in 20ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/s/add?callback=jQuery17108163597858510911_1335298035484&u=http%3A%2F%2Flocalhost%3A3000%2F&t=Tagger&i=1335298037067&s=&a=my+ags%2C+are+here&_=1335298043468" for 127.0.0.1 at 2012-04-24 16:07:23 -0400
+  Processing by RemoteController#service as JS
+  Parameters: {"callback"=>"jQuery17108163597858510911_1335298035484", "u"=>"http://localhost:3000/", "t"=>"Tagger", "i"=>"1335298037067", "s"=>"add", "a"=>"my ags, are here", "_"=>"1335298043468"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://localhost:3000/' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 1)[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 73ms (Views: 1.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/s/add?callback=jQuery17108163597858510911_1335298035485&u=http%3A%2F%2Flocalhost%3A3000%2F&t=Tagger&i=1335298037067&s=&_=1335298064490" for 127.0.0.1 at 2012-04-24 16:07:44 -0400
+  Processing by RemoteController#service as JS
+  Parameters: {"callback"=>"jQuery17108163597858510911_1335298035485", "u"=>"http://localhost:3000/", "t"=>"Tagger", "i"=>"1335298037067", "s"=>"add", "_"=>"1335298064490"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Completed 500 Internal Server Error in 52ms
+
+NoMethodError (undefined method `tr' for nil:NilClass):
+  app/controllers/remote_controller.rb:29:in `service'
+
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.6ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.eltiempo.com%2F&t=1335298070164" for 127.0.0.1 at 2012-04-24 16:07:50 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.eltiempo.com/", "t"=>"1335298070164"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.7ms)
+Completed 200 OK in 39ms (Views: 2.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/s/add?callback=jsonp1335298064871&_=1335298078831&u=http%3A%2F%2Fwww.eltiempo.com%2F&t=Principales+Noticias+de+Colombia+y+el+Mundo+-+ELTIEMPO.COM&i=1335298070164&s=&a=el+tiempo%2C+peri%C3%B3dico" for 127.0.0.1 at 2012-04-24 16:07:58 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jsonp1335298064871", "_"=>"1335298078831", "u"=>"http://www.eltiempo.com/", "t"=>"Principales Noticias de Colombia y el Mundo - ELTIEMPO.COM", "i"=>"1335298070164", "s"=>"add", "a"=>"el tiempo, periódico"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.2ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.eltiempo.com/' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 5)
+Rendered text template (0.0ms)
+Completed 200 OK in 72ms (Views: 1.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.eltiempo.com%2F&t=1335298112596" for 127.0.0.1 at 2012-04-24 16:08:32 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.eltiempo.com/", "t"=>"1335298112596"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.6ms)
+Rendered tag/new.html.erb (1.1ms)
+Completed 200 OK in 20ms (Views: 2.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/s/add?callback=jQuery1720430922465166077_1335298112704&u=http%3A%2F%2Fwww.eltiempo.com%2F&t=Principales+Noticias+de+Colombia+y+el+Mundo+-+ELTIEMPO.COM&i=1335298112596&s=&a=hola&_=1335298117276" for 127.0.0.1 at 2012-04-24 16:08:37 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery1720430922465166077_1335298112704", "u"=>"http://www.eltiempo.com/", "t"=>"Principales Noticias de Colombia y el Mundo - ELTIEMPO.COM", "i"=>"1335298112596", "s"=>"add", "a"=>"hola", "_"=>"1335298117276"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.eltiempo.com/' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 5)
+Rendered text template (0.0ms)
+Completed 200 OK in 70ms (Views: 1.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.eltiempo.com%2F&t=1335298433966" for 127.0.0.1 at 2012-04-24 16:13:53 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.eltiempo.com/", "t"=>"1335298433966"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 19ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/s/add?callback=jQuery17209535212102346122_1335298434037&u=http%3A%2F%2Fwww.eltiempo.com%2F&t=Principales+Noticias+de+Colombia+y+el+Mundo+-+ELTIEMPO.COM&i=1335298433966&s=&a=hello&_=1335298438341" for 127.0.0.1 at 2012-04-24 16:13:58 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery17209535212102346122_1335298434037", "u"=>"http://www.eltiempo.com/", "t"=>"Principales Noticias de Colombia y el Mundo - ELTIEMPO.COM", "i"=>"1335298433966", "s"=>"add", "a"=>"hello", "_"=>"1335298438341"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.eltiempo.com/' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 5)
+Rendered text template (0.0ms)
+Completed 200 OK in 72ms (Views: 1.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/s/add?callback=jQuery17209535212102346122_1335298434038&u=http%3A%2F%2Fwww.eltiempo.com%2F&t=Principales+Noticias+de+Colombia+y+el+Mundo+-+ELTIEMPO.COM&i=1335298433966&s=&_=1335298462494" for 127.0.0.1 at 2012-04-24 16:14:22 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery17209535212102346122_1335298434038", "u"=>"http://www.eltiempo.com/", "t"=>"Principales Noticias de Colombia y el Mundo - ELTIEMPO.COM", "i"=>"1335298433966", "s"=>"add", "_"=>"1335298462494"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Completed 500 Internal Server Error in 19ms
+
+NoMethodError (undefined method `tr' for nil:NilClass):
+  app/controllers/remote_controller.rb:29:in `service'
+
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (3.6ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.wikipedia.org%2F&t=1335298465834" for 127.0.0.1 at 2012-04-24 16:14:25 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.wikipedia.org/", "t"=>"1335298465834"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 40ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/s/add?callback=jQuery172029086788510903716_1335298465931&u=http%3A%2F%2Fwww.wikipedia.org%2F&t=Wikipedia&i=1335298465834&s=&a=enciclopedia%2C+dos+palabras&_=1335298473916" for 127.0.0.1 at 2012-04-24 16:14:33 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery172029086788510903716_1335298465931", "u"=>"http://www.wikipedia.org/", "t"=>"Wikipedia", "i"=>"1335298465834", "s"=>"add", "a"=>"enciclopedia, dos palabras", "_"=>"1335298473916"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.wikipedia.org/' LIMIT 1
+Completed 500 Internal Server Error in 94ms
+
+NameError (undefined local variable or method `taglist' for #<RemoteController:0x007fd6e40c7f70>):
+  app/controllers/remote_controller.rb:33:in `block in service'
+  app/controllers/remote_controller.rb:31:in `service'
+
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (3.2ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.wikipedia.org%2F&t=1335298556459" for 127.0.0.1 at 2012-04-24 16:15:56 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.wikipedia.org/", "t"=>"1335298556459"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 20ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/s/add?callback=jQuery17205504333337303251_1335298556520&u=http%3A%2F%2Fwww.wikipedia.org%2F&t=Wikipedia&i=1335298465834&s=&_=1335298561005" for 127.0.0.1 at 2012-04-24 16:16:01 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery17205504333337303251_1335298556520", "u"=>"http://www.wikipedia.org/", "t"=>"Wikipedia", "i"=>"1335298465834", "s"=>"add", "_"=>"1335298561005"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Completed 500 Internal Server Error in 38ms
+
+NoMethodError (undefined method `tr' for nil:NilClass):
+  app/controllers/remote_controller.rb:29:in `service'
+
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (3.2ms)
+
+
+Started GET "/s/add?callback=jQuery17205504333337303251_1335298556521&u=http%3A%2F%2Fwww.wikipedia.org%2F&t=Wikipedia&i=1335298556459&s=&a=dos+palabras%2C+tres&_=1335298561006" for 127.0.0.1 at 2012-04-24 16:16:01 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery17205504333337303251_1335298556521", "u"=>"http://www.wikipedia.org/", "t"=>"Wikipedia", "i"=>"1335298556459", "s"=>"add", "a"=>"dos palabras, tres", "_"=>"1335298561006"}
+  [1m[36mPatron Load (0.3ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.wikipedia.org/' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "bookmarks" ("created_at", "original_url", "remote_ref", "title", "type", "updated_at", "uuid") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Tue, 24 Apr 2012 20:16:01 UTC +00:00], ["original_url", "http://www.wikipedia.org/"], ["remote_ref", nil], ["title", "Wikipedia"], ["type", "Bookmark"], ["updated_at", Tue, 24 Apr 2012 20:16:01 UTC +00:00], ["uuid", nil]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" WHERE (name LIKE 'dos' ESCAPE '!' OR name LIKE 'palabras' ESCAPE '!' OR name LIKE 'tres' ESCAPE '!')
+  [1m[36m (0.0ms)[0m  [1mSELECT 1 FROM "tags" WHERE "tags"."name" = 'dos' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "dos"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT 1 FROM "tags" WHERE "tags"."name" = 'palabras' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "palabras"]]
+  [1m[36m (0.0ms)[0m  [1mSELECT 1 FROM "tags" WHERE "tags"."name" = 'tres' LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  INSERT INTO "tags" ("name") VALUES (?)  [["name", "tres"]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 7 AND "taggings"."taggable_type" = 'Bookmark' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.1ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 7 AND "taggings"."taggable_type" = 'Bookmark' AND "taggings"."tagger_type" IS NULL AND "taggings"."tagger_id" IS NULL AND "taggings"."context" = 'tags' AND "taggings"."tag_id" IN (NULL)
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "taggings" WHERE ("taggings"."tag_id" = 11 AND "taggings"."taggable_type" = 'Bookmark' AND "taggings"."taggable_id" = 7 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", "tags"], ["created_at", Tue, 24 Apr 2012 20:16:01 UTC +00:00], ["tag_id", 11], ["taggable_id", 7], ["taggable_type", "Bookmark"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "taggings" WHERE ("taggings"."tag_id" = 12 AND "taggings"."taggable_type" = 'Bookmark' AND "taggings"."taggable_id" = 7 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", "tags"], ["created_at", Tue, 24 Apr 2012 20:16:01 UTC +00:00], ["tag_id", 12], ["taggable_id", 7], ["taggable_type", "Bookmark"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36m (0.1ms)[0m  [1mSELECT 1 FROM "taggings" WHERE ("taggings"."tag_id" = 13 AND "taggings"."taggable_type" = 'Bookmark' AND "taggings"."taggable_id" = 7 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)  [["context", "tags"], ["created_at", Tue, 24 Apr 2012 20:16:01 UTC +00:00], ["tag_id", 13], ["taggable_id", 7], ["taggable_type", "Bookmark"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 7)[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 87ms (Views: 1.5ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/s/add?callback=jQuery17205504333337303251_1335298556522&u=http%3A%2F%2Fwww.wikipedia.org%2F&t=Wikipedia&i=1335298465834&s=&_=1335298599409" for 127.0.0.1 at 2012-04-24 16:16:39 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery17205504333337303251_1335298556522", "u"=>"http://www.wikipedia.org/", "t"=>"Wikipedia", "i"=>"1335298465834", "s"=>"add", "_"=>"1335298599409"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Completed 500 Internal Server Error in 18ms
+
+NoMethodError (undefined method `tr' for nil:NilClass):
+  app/controllers/remote_controller.rb:29:in `service'
+
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (3.1ms)
+
+
+Started GET "/s/add?callback=jQuery17205504333337303251_1335298556523&u=http%3A%2F%2Fwww.wikipedia.org%2F&t=Wikipedia&i=1335298556459&s=&_=1335298599410" for 127.0.0.1 at 2012-04-24 16:16:39 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery17205504333337303251_1335298556523", "u"=>"http://www.wikipedia.org/", "t"=>"Wikipedia", "i"=>"1335298556459", "s"=>"add", "_"=>"1335298599410"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Completed 500 Internal Server Error in 37ms
+
+NoMethodError (undefined method `tr' for nil:NilClass):
+  app/controllers/remote_controller.rb:29:in `service'
+
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/actionpack-3.1.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (3.2ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.eltiempo.com%2F&t=1335298607497" for 127.0.0.1 at 2012-04-24 16:16:47 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.eltiempo.com/", "t"=>"1335298607497"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 20ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/s/add?callback=jQuery17204951601547654718_1335298607568&u=http%3A%2F%2Fwww.eltiempo.com%2F&t=Principales+Noticias+de+Colombia+y+el+Mundo+-+ELTIEMPO.COM&i=1335298607497&s=&a=peri%C3%B3dico%2C+de+ayer&_=1335298616102" for 127.0.0.1 at 2012-04-24 16:16:56 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery17204951601547654718_1335298607568", "u"=>"http://www.eltiempo.com/", "t"=>"Principales Noticias de Colombia y el Mundo - ELTIEMPO.COM", "i"=>"1335298607497", "s"=>"add", "a"=>"periódico, de ayer", "_"=>"1335298616102"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.eltiempo.com/' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 5)[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 115ms (Views: 1.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/s/add?callback=jQuery17204951601547654718_1335298607569&u=http%3A%2F%2Fwww.eltiempo.com%2F&t=Principales+Noticias+de+Colombia+y+el+Mundo+-+ELTIEMPO.COM&i=1335298607497&s=&_=1335298687284" for 127.0.0.1 at 2012-04-24 16:18:07 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery17204951601547654718_1335298607569", "u"=>"http://www.eltiempo.com/", "t"=>"Principales Noticias de Colombia y el Mundo - ELTIEMPO.COM", "i"=>"1335298607497", "s"=>"add", "_"=>"1335298687284"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.eltiempo.com/' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 5)
+Rendered text template (0.0ms)
+Completed 200 OK in 72ms (Views: 1.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.semana.com%2FHome.aspx&t=1335298696355" for 127.0.0.1 at 2012-04-24 16:18:16 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.semana.com/Home.aspx", "t"=>"1335298696355"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/_tagger.js.erb (0.1ms)
+Rendered tag/new.html.erb (0.6ms)
+Completed 200 OK in 20ms (Views: 2.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/s/add?callback=jQuery17209023534732405096_1335298696426&u=http%3A%2F%2Fwww.semana.com%2FHome.aspx&t=Semana.com+-+An%C3%A1lisis+de+actualidad&i=1335298696355&s=&a=probando+varias+palabras%2C+separadas+por+comas%2C+una%2C+dos%2C+tres&_=1335298711342" for 127.0.0.1 at 2012-04-24 16:18:31 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery17209023534732405096_1335298696426", "u"=>"http://www.semana.com/Home.aspx", "t"=>"Semana.com - Análisis de actualidad", "i"=>"1335298696355", "s"=>"add", "a"=>"probando varias palabras, separadas por comas, una, dos, tres", "_"=>"1335298711342"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.semana.com/Home.aspx' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "bookmarks" ("created_at", "original_url", "remote_ref", "title", "type", "updated_at", "uuid") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Tue, 24 Apr 2012 20:18:31 UTC +00:00], ["original_url", "http://www.semana.com/Home.aspx"], ["remote_ref", nil], ["title", "Semana.com - Análisis de actualidad"], ["type", "Bookmark"], ["updated_at", Tue, 24 Apr 2012 20:18:31 UTC +00:00], ["uuid", nil]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.2ms)[0m  [1mSELECT "tags".* FROM "tags" WHERE (name LIKE 'probando varias palabras' ESCAPE '!' OR name LIKE 'separadas por comas' ESCAPE '!' OR name LIKE 'una' ESCAPE '!' OR name LIKE 'dos' ESCAPE '!' OR name LIKE 'tres' ESCAPE '!')[0m
+  [1m[35m (0.0ms)[0m  SELECT 1 FROM "tags" WHERE "tags"."name" = 'probando varias palabras' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "tags" ("name") VALUES (?)[0m  [["name", "probando varias palabras"]]
+  [1m[35m (0.0ms)[0m  SELECT 1 FROM "tags" WHERE "tags"."name" = 'separadas por comas' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("name") VALUES (?)[0m  [["name", "separadas por comas"]]
+  [1m[35m (0.0ms)[0m  SELECT 1 FROM "tags" WHERE "tags"."name" = 'una' LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mINSERT INTO "tags" ("name") VALUES (?)[0m  [["name", "una"]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 8 AND "taggings"."taggable_type" = 'Bookmark' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 8 AND "taggings"."taggable_type" = 'Bookmark' AND "taggings"."tagger_type" IS NULL AND "taggings"."tagger_id" IS NULL AND "taggings"."context" = 'tags' AND "taggings"."tag_id" IN (NULL)[0m
+  [1m[35m (0.0ms)[0m  SELECT 1 FROM "taggings" WHERE ("taggings"."tag_id" = 11 AND "taggings"."taggable_type" = 'Bookmark' AND "taggings"."taggable_id" = 8 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["context", "tags"], ["created_at", Tue, 24 Apr 2012 20:18:31 UTC +00:00], ["tag_id", 11], ["taggable_id", 8], ["taggable_type", "Bookmark"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "taggings" WHERE ("taggings"."tag_id" = 13 AND "taggings"."taggable_type" = 'Bookmark' AND "taggings"."taggable_id" = 8 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["context", "tags"], ["created_at", Tue, 24 Apr 2012 20:18:31 UTC +00:00], ["tag_id", 13], ["taggable_id", 8], ["taggable_type", "Bookmark"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "taggings" WHERE ("taggings"."tag_id" = 14 AND "taggings"."taggable_type" = 'Bookmark' AND "taggings"."taggable_id" = 8 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["context", "tags"], ["created_at", Tue, 24 Apr 2012 20:18:31 UTC +00:00], ["tag_id", 14], ["taggable_id", 8], ["taggable_type", "Bookmark"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "taggings" WHERE ("taggings"."tag_id" = 15 AND "taggings"."taggable_type" = 'Bookmark' AND "taggings"."taggable_id" = 8 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["context", "tags"], ["created_at", Tue, 24 Apr 2012 20:18:31 UTC +00:00], ["tag_id", 15], ["taggable_id", 8], ["taggable_type", "Bookmark"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[35m (0.1ms)[0m  SELECT 1 FROM "taggings" WHERE ("taggings"."tag_id" = 16 AND "taggings"."taggable_type" = 'Bookmark' AND "taggings"."taggable_id" = 8 AND "taggings"."context" = 'tags' AND "taggings"."tagger_id" IS NULL AND "taggings"."tagger_type" IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "taggings" ("context", "created_at", "tag_id", "taggable_id", "taggable_type", "tagger_id", "tagger_type") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["context", "tags"], ["created_at", Tue, 24 Apr 2012 20:18:31 UTC +00:00], ["tag_id", 16], ["taggable_id", 8], ["taggable_type", "Bookmark"], ["tagger_id", nil], ["tagger_type", nil]]
+  [1m[35m (0.2ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 8)
+Rendered text template (0.0ms)
+Completed 200 OK in 92ms (Views: 1.4ms | ActiveRecord: 4.3ms)
