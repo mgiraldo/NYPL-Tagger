@@ -24,10 +24,12 @@ class RemoteController < ApplicationController
   def service
     if params[:s]=="add"
       url = params[:u]
-      time = params[:t]
+      title = params[:t]
+      time = params[:i]
+      tag_list = params[:a].tr(" ",",")
       if url != nil
         @bookmark = Bookmark.find_or_create_by_original_url(
-          :original_url => url
+          :original_url => url, :title => title, :tag_list => tag_list
         )
         @current_user.bookmarks << @bookmark
         @success = @current_user.save!
