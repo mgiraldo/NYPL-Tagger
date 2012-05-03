@@ -15605,3 +15605,133 @@ Started GET "/t.js?u=http%3A%2F%2Flocalhost%3A3000%2F&t=1336069275531" for 127.0
 Rendered tag/_tagger.js.erb (1.7ms)
 Rendered tag/new.html.erb (2.2ms)
 Completed 200 OK in 55ms (Views: 3.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Flocalhost%3A3000%2F&t=1336069647315" for 127.0.0.1 at 2012-05-03 14:27:27 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://localhost:3000/", "t"=>"1336069647315"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10
+Rendered tag/_tagger.js.erb (1.9ms)
+Rendered tag/new.html.erb (2.4ms)
+Completed 200 OK in 55ms (Views: 3.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/s/add?callback=jQuery172032822471880353987_1336069647415&u=http%3A%2F%2Flocalhost%3A3000%2F&t=Tagger&i=1336069647315&s=&a=over&_=1336069652388" for 127.0.0.1 at 2012-05-03 14:27:32 -0400
+  Processing by RemoteController#service as JS
+  Parameters: {"callback"=>"jQuery172032822471880353987_1336069647415", "u"=>"http://localhost:3000/", "t"=>"Tagger", "i"=>"1336069647315", "s"=>"add", "a"=>"over", "_"=>"1336069652388"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.2ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://localhost:3000/' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 1)[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 218ms (Views: 12.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Flocalhost%3A3000%2F&t=1336069654878" for 127.0.0.1 at 2012-05-03 14:27:34 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://localhost:3000/", "t"=>"1336069654878"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.0ms)
+Rendered tag/new.html.erb (2.5ms)
+Completed 200 OK in 55ms (Views: 3.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/s/add?callback=jQuery172012095220130868256_1336069654977&u=http%3A%2F%2Flocalhost%3A3000%2F&t=Tagger&i=1336069654878&s=&a=stack&_=1336069657358" for 127.0.0.1 at 2012-05-03 14:27:37 -0400
+  Processing by RemoteController#service as JS
+  Parameters: {"callback"=>"jQuery172012095220130868256_1336069654977", "u"=>"http://localhost:3000/", "t"=>"Tagger", "i"=>"1336069654878", "s"=>"add", "a"=>"stack", "_"=>"1336069657358"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://localhost:3000/' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 1)
+Rendered text template (0.0ms)
+Completed 200 OK in 70ms (Views: 1.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Flocalhost%3A3000%2F&t=1336069658212" for 127.0.0.1 at 2012-05-03 14:27:38 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://localhost:3000/", "t"=>"1336069658212"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10
+Rendered tag/_tagger.js.erb (1.8ms)
+Rendered tag/new.html.erb (2.2ms)
+Completed 200 OK in 56ms (Views: 3.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/s/add?callback=jQuery17209311261062975973_1336069658309&u=http%3A%2F%2Flocalhost%3A3000%2F&t=Tagger&i=1336069658212&s=&a=stack&_=1336069660990" for 127.0.0.1 at 2012-05-03 14:27:40 -0400
+  Processing by RemoteController#service as JS
+  Parameters: {"callback"=>"jQuery17209311261062975973_1336069658309", "u"=>"http://localhost:3000/", "t"=>"Tagger", "i"=>"1336069658212", "s"=>"add", "a"=>"stack", "_"=>"1336069660990"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://localhost:3000/' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 1)[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 88ms (Views: 1.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Flocalhost%3A3000%2F&t=1336069661877" for 127.0.0.1 at 2012-05-03 14:27:41 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://localhost:3000/", "t"=>"1336069661877"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (1.8ms)
+Rendered tag/new.html.erb (2.3ms)
+Completed 200 OK in 57ms (Views: 3.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/s/add?callback=jQuery1720578864007955417_1336069661976&u=http%3A%2F%2Flocalhost%3A3000%2F&t=Tagger&i=1336069272791&s=&_=1336069689649" for 127.0.0.1 at 2012-05-03 14:28:09 -0400
+  Processing by RemoteController#service as JS
+  Parameters: {"callback"=>"jQuery1720578864007955417_1336069661976", "u"=>"http://localhost:3000/", "t"=>"Tagger", "i"=>"1336069272791", "s"=>"add", "_"=>"1336069689649"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.2ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://localhost:3000/' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 1)
+Rendered text template (0.0ms)
+Completed 200 OK in 78ms (Views: 1.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/s/add?callback=jQuery1720578864007955417_1336069661978&u=http%3A%2F%2Flocalhost%3A3000%2F&t=Tagger&i=1336069647315&s=&_=1336069689650" for 127.0.0.1 at 2012-05-03 14:28:09 -0400
+  Processing by RemoteController#service as JS
+  Parameters: {"callback"=>"jQuery1720578864007955417_1336069661978", "u"=>"http://localhost:3000/", "t"=>"Tagger", "i"=>"1336069647315", "s"=>"add", "_"=>"1336069689650"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://localhost:3000/' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 1)[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 72ms (Views: 1.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/s/add?callback=jQuery1720578864007955417_1336069661977&u=http%3A%2F%2Flocalhost%3A3000%2F&t=Tagger&i=1336069275531&s=&_=1336069689650" for 127.0.0.1 at 2012-05-03 14:28:09 -0400
+  Processing by RemoteController#service as JS
+  Parameters: {"callback"=>"jQuery1720578864007955417_1336069661977", "u"=>"http://localhost:3000/", "t"=>"Tagger", "i"=>"1336069275531", "s"=>"add", "_"=>"1336069689650"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://localhost:3000/' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 1)
+Rendered text template (0.0ms)
+Completed 200 OK in 70ms (Views: 1.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/s/add?callback=jQuery1720578864007955417_1336069661979&u=http%3A%2F%2Flocalhost%3A3000%2F&t=Tagger&i=1336069654878&s=&_=1336069689651" for 127.0.0.1 at 2012-05-03 14:28:09 -0400
+  Processing by RemoteController#service as JS
+  Parameters: {"callback"=>"jQuery1720578864007955417_1336069661979", "u"=>"http://localhost:3000/", "t"=>"Tagger", "i"=>"1336069654878", "s"=>"add", "_"=>"1336069689651"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://localhost:3000/' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 1)[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 71ms (Views: 1.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/s/add?callback=jQuery1720578864007955417_1336069661980&u=http%3A%2F%2Flocalhost%3A3000%2F&t=Tagger&i=1336069658212&s=&_=1336069689652" for 127.0.0.1 at 2012-05-03 14:28:10 -0400
+  Processing by RemoteController#service as JS
+  Parameters: {"callback"=>"jQuery1720578864007955417_1336069661980", "u"=>"http://localhost:3000/", "t"=>"Tagger", "i"=>"1336069658212", "s"=>"add", "_"=>"1336069689652"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.2ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://localhost:3000/' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 1)
+Rendered text template (0.0ms)
+Completed 200 OK in 73ms (Views: 1.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/s/add?callback=jQuery1720578864007955417_1336069661981&u=http%3A%2F%2Flocalhost%3A3000%2F&t=Tagger&i=1336069661877&s=&_=1336069689653" for 127.0.0.1 at 2012-05-03 14:28:10 -0400
+  Processing by RemoteController#service as JS
+  Parameters: {"callback"=>"jQuery1720578864007955417_1336069661981", "u"=>"http://localhost:3000/", "t"=>"Tagger", "i"=>"1336069661877", "s"=>"add", "_"=>"1336069689653"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://localhost:3000/' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 1)[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 73ms (Views: 1.4ms | ActiveRecord: 1.4ms)

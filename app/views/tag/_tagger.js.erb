@@ -16,7 +16,7 @@
 			$('body').prepend(html);
 			$(divID).css("background-color", "rgba(0,0,0,0.75)");
 			$(divID).css("position", "absolute");
-			$(divID).css("z-index", "10000001");
+			$(divID).css("z-index", "1000000000001");
 			$(divID).css("width", "100%");
 			$(divID).css("height", "100%");
 			$(divID).css("color", "#fff");
@@ -41,6 +41,7 @@
 			$("#cloud_"+myUUID).css("margin-left", "auto");
 			$("#cloud_"+myUUID).css("margin-right", "auto");
 			$("#cloud_"+myUUID+" a").css("margin-right", "20px");
+			$("#cloud_"+myUUID+" a").css("color", "#fff");
 			// pretag click
 			$("#cloud_"+myUUID+" a.pretag").click(
 				function () {
