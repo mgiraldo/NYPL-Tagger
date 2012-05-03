@@ -15735,3 +15735,666 @@ Started GET "/s/add?callback=jQuery1720578864007955417_1336069661981&u=http%3A%2
   [1m[36m (0.2ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 1)[0m
 Rendered text template (0.0ms)
 Completed 200 OK in 73ms (Views: 1.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-03 16:46:04 -0400
+  Processing by TagController#help as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+Rendered tag/help.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 132ms (Views: 54.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-03 16:46:04 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-05-03 16:46:04 -0400
+Served asset /bookmarks.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-05-03 16:46:04 -0400
+Served asset /remote.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-05-03 16:46:04 -0400
+Served asset /patrons.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-05-03 16:46:04 -0400
+Served asset /global.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-05-03 16:46:04 -0400
+Served asset /tag.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-03 16:46:04 -0400
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-03 16:46:04 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-05-03 16:46:04 -0400
+Served asset /bookmarks.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-05-03 16:46:04 -0400
+Served asset /patrons.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-05-03 16:46:04 -0400
+Served asset /remote.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-05-03 16:46:04 -0400
+Served asset /tag.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-03 16:46:04 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-05-03 16:46:04 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/tag.jpg" for 127.0.0.1 at 2012-05-03 16:46:04 -0400
+Served asset /tag.jpg - 304 Not Modified (1ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336077981902" for 127.0.0.1 at 2012-05-03 16:46:21 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336077981902"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (4.2ms)
+Rendered tag/new.html.erb (6.8ms)
+Completed 200 OK in 83ms (Views: 7.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336078013220" for 127.0.0.1 at 2012-05-03 16:46:53 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336078013220"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.5ms)
+Rendered tag/new.html.erb (3.0ms)
+Completed 200 OK in 58ms (Views: 4.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336078027357" for 127.0.0.1 at 2012-05-03 16:47:07 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336078027357"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.3ms)
+Rendered tag/new.html.erb (2.7ms)
+Completed 200 OK in 57ms (Views: 4.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336078216050" for 127.0.0.1 at 2012-05-03 16:50:16 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336078216050"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 38ms (Views: 4.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336078285488" for 127.0.0.1 at 2012-05-03 16:51:25 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336078285488"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.9ms)
+Completed 200 OK in 38ms (Views: 4.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336078441107" for 127.0.0.1 at 2012-05-03 16:54:01 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336078441107"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (20.3ms)
+Rendered tag/new.html.erb (20.9ms)
+Completed 200 OK in 57ms (Views: 22.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336078541979" for 127.0.0.1 at 2012-05-03 16:55:41 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336078541979"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (22.1ms)
+Rendered tag/new.html.erb (22.6ms)
+Completed 200 OK in 59ms (Views: 23.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336078781592" for 127.0.0.1 at 2012-05-03 16:59:41 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336078781592"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.3ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 57ms (Views: 4.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336078801613" for 127.0.0.1 at 2012-05-03 17:00:01 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336078801613"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 57ms (Views: 4.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336078811891" for 127.0.0.1 at 2012-05-03 17:00:11 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336078811891"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.3ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 59ms (Views: 4.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336078854405" for 127.0.0.1 at 2012-05-03 17:00:54 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336078854405"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.6ms)
+Rendered tag/new.html.erb (3.1ms)
+Completed 200 OK in 57ms (Views: 4.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336078872838" for 127.0.0.1 at 2012-05-03 17:01:12 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336078872838"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.3ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 62ms (Views: 4.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336078891038" for 127.0.0.1 at 2012-05-03 17:01:31 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336078891038"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.3ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 58ms (Views: 4.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336078910724" for 127.0.0.1 at 2012-05-03 17:01:50 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336078910724"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.5ms)
+Rendered tag/new.html.erb (3.0ms)
+Completed 200 OK in 56ms (Views: 4.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336078923707" for 127.0.0.1 at 2012-05-03 17:02:03 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336078923707"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.9ms)
+Completed 200 OK in 59ms (Views: 4.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336078942058" for 127.0.0.1 at 2012-05-03 17:02:22 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336078942058"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 57ms (Views: 4.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336079030197" for 127.0.0.1 at 2012-05-03 17:03:50 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336079030197"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.9ms)
+Completed 200 OK in 57ms (Views: 4.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336079053258" for 127.0.0.1 at 2012-05-03 17:04:13 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336079053258"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.9ms)
+Completed 200 OK in 63ms (Views: 4.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336079135681" for 127.0.0.1 at 2012-05-03 17:05:35 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336079135681"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.3ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 57ms (Views: 4.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336079173031" for 127.0.0.1 at 2012-05-03 17:06:13 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336079173031"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.3ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 59ms (Views: 4.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336079190662" for 127.0.0.1 at 2012-05-03 17:06:30 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336079190662"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.9ms)
+Completed 200 OK in 60ms (Views: 4.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336079210370" for 127.0.0.1 at 2012-05-03 17:06:50 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336079210370"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 57ms (Views: 4.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336079335375" for 127.0.0.1 at 2012-05-03 17:08:55 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336079335375"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.3ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.3ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 57ms (Views: 4.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336079371499" for 127.0.0.1 at 2012-05-03 17:09:31 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336079371499"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.9ms)
+Completed 200 OK in 57ms (Views: 4.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336079389916" for 127.0.0.1 at 2012-05-03 17:09:49 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336079389916"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.9ms)
+Completed 200 OK in 39ms (Views: 4.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336079430858" for 127.0.0.1 at 2012-05-03 17:10:30 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336079430858"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.9ms)
+Completed 200 OK in 38ms (Views: 4.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336079469514" for 127.0.0.1 at 2012-05-03 17:11:09 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336079469514"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (20.4ms)
+Rendered tag/new.html.erb (20.9ms)
+Completed 200 OK in 56ms (Views: 22.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336079518814" for 127.0.0.1 at 2012-05-03 17:11:58 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336079518814"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 58ms (Views: 4.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336079536326" for 127.0.0.1 at 2012-05-03 17:12:16 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336079536326"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.6ms)
+Rendered tag/new.html.erb (3.1ms)
+Completed 200 OK in 59ms (Views: 4.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336079641663" for 127.0.0.1 at 2012-05-03 17:14:01 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336079641663"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 60ms (Views: 4.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336079662869" for 127.0.0.1 at 2012-05-03 17:14:22 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336079662869"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.3ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 67ms (Views: 4.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fdocs.sublimetext.info%2Fen%2Flatest%2Findex.html&t=1336079681954" for 127.0.0.1 at 2012-05-03 17:14:41 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://docs.sublimetext.info/en/latest/index.html", "t"=>"1336079681954"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.9ms)
+Completed 200 OK in 57ms (Views: 4.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fnypl-labs.tumblr.com%2F&t=1336079697513" for 127.0.0.1 at 2012-05-03 17:14:57 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://nypl-labs.tumblr.com/", "t"=>"1336079697513"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (1.8ms)
+Rendered tag/new.html.erb (2.3ms)
+Completed 200 OK in 60ms (Views: 3.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fnypl-labs.tumblr.com%2F&t=1336079782124" for 127.0.0.1 at 2012-05-03 17:16:22 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://nypl-labs.tumblr.com/", "t"=>"1336079782124"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.9ms)
+Completed 200 OK in 59ms (Views: 4.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/s/add?callback=jQuery17208991927548777312_1336079782226&u=http%3A%2F%2Fnypl-labs.tumblr.com%2F&t=Labs+Links&i=1336079697513&s=&_=1336079786226" for 127.0.0.1 at 2012-05-03 17:16:26 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery17208991927548777312_1336079782226", "u"=>"http://nypl-labs.tumblr.com/", "t"=>"Labs Links", "i"=>"1336079697513", "s"=>"add", "_"=>"1336079786226"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.2ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://nypl-labs.tumblr.com/' LIMIT 1[0m
+  [1m[35mSQL (34.6ms)[0m  INSERT INTO "bookmarks" ("created_at", "original_url", "remote_ref", "title", "type", "updated_at", "uuid") VALUES (?, ?, ?, ?, ?, ?, ?)  [["created_at", Thu, 03 May 2012 21:16:26 UTC +00:00], ["original_url", "http://nypl-labs.tumblr.com/"], ["remote_ref", nil], ["title", "Labs Links"], ["type", "Bookmark"], ["updated_at", Thu, 03 May 2012 21:16:26 UTC +00:00], ["uuid", nil]]
+  [1m[36mActsAsTaggableOn::Tag Load (0.1ms)[0m  [1mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Bookmark' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)[0m
+  [1m[35mActsAsTaggableOn::Tagging Load (0.1ms)[0m  SELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 10 AND "taggings"."taggable_type" = 'Bookmark' AND "taggings"."tagger_type" IS NULL AND "taggings"."tagger_id" IS NULL AND "taggings"."context" = 'tags' AND "taggings"."tag_id" IN (NULL)
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 10)[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 218ms (Views: 20.0ms | ActiveRecord: 36.6ms)
+
+
+Started GET "/s/add?callback=jQuery17208991927548777312_1336079782227&u=http%3A%2F%2Fnypl-labs.tumblr.com%2F&t=Labs+Links&i=1336079782124&s=&_=1336079786227" for 127.0.0.1 at 2012-05-03 17:16:26 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery17208991927548777312_1336079782227", "u"=>"http://nypl-labs.tumblr.com/", "t"=>"Labs Links", "i"=>"1336079782124", "s"=>"add", "_"=>"1336079786227"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://nypl-labs.tumblr.com/' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 10)
+Rendered text template (0.0ms)
+Completed 200 OK in 173ms (Views: 1.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DkbytE_FAZuA%26feature%3Dg-all-esi&t=1336079796598" for 127.0.0.1 at 2012-05-03 17:16:36 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.youtube.com/watch?v=kbytE_FAZuA&feature=g-all-esi", "t"=>"1336079796598"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10
+Rendered tag/_tagger.js.erb (1.8ms)
+Rendered tag/new.html.erb (2.3ms)
+Completed 200 OK in 59ms (Views: 3.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DkbytE_FAZuA%26feature%3Dg-all-esi&t=1336080015186" for 127.0.0.1 at 2012-05-03 17:20:15 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.youtube.com/watch?v=kbytE_FAZuA&feature=g-all-esi", "t"=>"1336080015186"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 59ms (Views: 4.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DkbytE_FAZuA%26feature%3Dg-all-esi&t=1336080041490" for 127.0.0.1 at 2012-05-03 17:20:41 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.youtube.com/watch?v=kbytE_FAZuA&feature=g-all-esi", "t"=>"1336080041490"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 63ms (Views: 4.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DkbytE_FAZuA%26feature%3Dg-all-esi&t=1336080100683" for 127.0.0.1 at 2012-05-03 17:21:40 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.youtube.com/watch?v=kbytE_FAZuA&feature=g-all-esi", "t"=>"1336080100683"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10
+Rendered tag/_tagger.js.erb (2.5ms)
+Rendered tag/new.html.erb (3.1ms)
+Completed 200 OK in 59ms (Views: 4.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DkbytE_FAZuA%26feature%3Dg-all-esi&t=1336080129076" for 127.0.0.1 at 2012-05-03 17:22:09 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.youtube.com/watch?v=kbytE_FAZuA&feature=g-all-esi", "t"=>"1336080129076"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.9ms)
+Completed 200 OK in 58ms (Views: 4.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DkbytE_FAZuA%26feature%3Dg-all-esi&t=1336080234411" for 127.0.0.1 at 2012-05-03 17:23:54 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.youtube.com/watch?v=kbytE_FAZuA&feature=g-all-esi", "t"=>"1336080234411"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10
+Rendered tag/_tagger.js.erb (2.5ms)
+Rendered tag/new.html.erb (3.1ms)
+Completed 200 OK in 59ms (Views: 4.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DkbytE_FAZuA%26feature%3Dg-all-esi&t=1336080253417" for 127.0.0.1 at 2012-05-03 17:24:13 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.youtube.com/watch?v=kbytE_FAZuA&feature=g-all-esi", "t"=>"1336080253417"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10
+Rendered tag/_tagger.js.erb (1.8ms)
+Rendered tag/new.html.erb (2.3ms)
+Completed 200 OK in 61ms (Views: 3.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DkbytE_FAZuA%26feature%3Dg-all-esi&t=1336080275810" for 127.0.0.1 at 2012-05-03 17:24:35 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.youtube.com/watch?v=kbytE_FAZuA&feature=g-all-esi", "t"=>"1336080275810"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10
+Rendered tag/_tagger.js.erb (1.8ms)
+Rendered tag/new.html.erb (2.3ms)
+Completed 200 OK in 57ms (Views: 3.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fnypl-labs.tumblr.com%2F&t=1336081154965" for 127.0.0.1 at 2012-05-03 17:39:14 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://nypl-labs.tumblr.com/", "t"=>"1336081154965"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10
+Rendered tag/_tagger.js.erb (1.8ms)
+Rendered tag/new.html.erb (2.3ms)
+Completed 200 OK in 57ms (Views: 3.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.cssbuttongenerator.com%2F&t=1336081657648" for 127.0.0.1 at 2012-05-03 17:47:37 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.cssbuttongenerator.com/", "t"=>"1336081657648"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 57ms (Views: 4.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/s/add?callback=jQuery17201771527980454266_1336081657757&u=http%3A%2F%2Fwww.cssbuttongenerator.com%2F&t=CSS+Button+Generator+-+Imageless+css+buttons+simplified&i=1336081657648&s=&a=&_=1336081661508" for 127.0.0.1 at 2012-05-03 17:47:41 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery17201771527980454266_1336081657757", "u"=>"http://www.cssbuttongenerator.com/", "t"=>"CSS Button Generator - Imageless css buttons simplified", "i"=>"1336081657648", "s"=>"add", "a"=>"", "_"=>"1336081661508"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.cssbuttongenerator.com/' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "bookmarks" ("created_at", "original_url", "remote_ref", "title", "type", "updated_at", "uuid") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Thu, 03 May 2012 21:47:41 UTC +00:00], ["original_url", "http://www.cssbuttongenerator.com/"], ["remote_ref", nil], ["title", "CSS Button Generator - Imageless css buttons simplified"], ["type", "Bookmark"], ["updated_at", Thu, 03 May 2012 21:47:41 UTC +00:00], ["uuid", nil]]
+  [1m[35mActsAsTaggableOn::Tag Load (0.1ms)[0m  SELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Bookmark' AND (taggings.context = 'tags' AND taggings.tagger_id IS NULL)
+  [1m[36mActsAsTaggableOn::Tagging Load (0.1ms)[0m  [1mSELECT "taggings".* FROM "taggings" WHERE "taggings"."taggable_id" = 11 AND "taggings"."taggable_type" = 'Bookmark' AND "taggings"."tagger_type" IS NULL AND "taggings"."tagger_id" IS NULL AND "taggings"."context" = 'tags' AND "taggings"."tag_id" IN (NULL)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 11)
+Rendered text template (0.0ms)
+Completed 200 OK in 101ms (Views: 1.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.cssbuttongenerator.com%2F&t=1336081664267" for 127.0.0.1 at 2012-05-03 17:47:44 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.cssbuttongenerator.com/", "t"=>"1336081664267"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10
+Rendered tag/_tagger.js.erb (1.9ms)
+Rendered tag/new.html.erb (2.4ms)
+Completed 200 OK in 58ms (Views: 3.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.cssbuttongenerator.com%2F&t=1336081705444" for 127.0.0.1 at 2012-05-03 17:48:25 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.cssbuttongenerator.com/", "t"=>"1336081705444"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10
+Rendered tag/_tagger.js.erb (2.6ms)
+Rendered tag/new.html.erb (3.1ms)
+Completed 200 OK in 59ms (Views: 4.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.cssbuttongenerator.com%2F&t=1336081802875" for 127.0.0.1 at 2012-05-03 17:50:02 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.cssbuttongenerator.com/", "t"=>"1336081802875"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.8ms)
+Completed 200 OK in 58ms (Views: 4.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.cssbuttongenerator.com%2F&t=1336081825636" for 127.0.0.1 at 2012-05-03 17:50:25 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.cssbuttongenerator.com/", "t"=>"1336081825636"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mActsAsTaggableOn::Tag Load (0.4ms)[0m  SELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10
+Rendered tag/_tagger.js.erb (2.4ms)
+Rendered tag/new.html.erb (2.9ms)
+Completed 200 OK in 59ms (Views: 4.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/s/add?callback=jQuery17207189910032320768_1336081825716&u=http%3A%2F%2Fwww.cssbuttongenerator.com%2F&t=CSS+Button+Generator+-+Imageless+css+buttons+simplified&i=1336081825636&s=&a=my%2Ctags%2Cover%2Ctiempo&_=1336081866115" for 127.0.0.1 at 2012-05-03 17:51:06 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery17207189910032320768_1336081825716", "u"=>"http://www.cssbuttongenerator.com/", "t"=>"CSS Button Generator - Imageless css buttons simplified", "i"=>"1336081825636", "s"=>"add", "a"=>"my,tags,over,tiempo", "_"=>"1336081866115"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.2ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.cssbuttongenerator.com/' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 11)[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 71ms (Views: 1.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/t.js?u=http%3A%2F%2Fwww.cssbuttongenerator.com%2F&t=1336081868835" for 127.0.0.1 at 2012-05-03 17:51:08 -0400
+  Processing by TagController#new as JS
+  Parameters: {"u"=>"http://www.cssbuttongenerator.com/", "t"=>"1336081868835"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mActsAsTaggableOn::Tag Load (0.4ms)[0m  [1mSELECT tags.*, taggings.tags_count AS count FROM "tags" JOIN (SELECT taggings.tag_id, COUNT(taggings.tag_id) AS tags_count FROM "taggings" INNER JOIN bookmarks ON bookmarks.id = taggings.taggable_id WHERE (taggings.taggable_type = 'Bookmark' AND taggings.context = 'tags') AND (taggings.taggable_id IN(SELECT bookmarks.id FROM "bookmarks" )) GROUP BY taggings.tag_id HAVING COUNT(taggings.tag_id) > 0) AS taggings ON taggings.tag_id = tags.id ORDER BY taggings.tags_count desc LIMIT 10[0m
+Rendered tag/_tagger.js.erb (1.8ms)
+Rendered tag/new.html.erb (2.3ms)
+Completed 200 OK in 57ms (Views: 3.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/s/add?callback=jQuery172036146832280792296_1336081868912&u=http%3A%2F%2Fwww.cssbuttongenerator.com%2F&t=CSS+Button+Generator+-+Imageless+css+buttons+simplified&i=1336081657648&s=&_=1336081876632" for 127.0.0.1 at 2012-05-03 17:51:16 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery172036146832280792296_1336081868912", "u"=>"http://www.cssbuttongenerator.com/", "t"=>"CSS Button Generator - Imageless css buttons simplified", "i"=>"1336081657648", "s"=>"add", "_"=>"1336081876632"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.cssbuttongenerator.com/' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 11)
+Rendered text template (0.0ms)
+Completed 200 OK in 72ms (Views: 1.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/s/add?callback=jQuery172036146832280792296_1336081868914&u=http%3A%2F%2Fwww.cssbuttongenerator.com%2F&t=CSS+Button+Generator+-+Imageless+css+buttons+simplified&i=1336081705444&s=&_=1336081876634" for 127.0.0.1 at 2012-05-03 17:51:16 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery172036146832280792296_1336081868914", "u"=>"http://www.cssbuttongenerator.com/", "t"=>"CSS Button Generator - Imageless css buttons simplified", "i"=>"1336081705444", "s"=>"add", "_"=>"1336081876634"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.cssbuttongenerator.com/' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 11)[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 76ms (Views: 1.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/s/add?callback=jQuery172036146832280792296_1336081868913&u=http%3A%2F%2Fwww.cssbuttongenerator.com%2F&t=CSS+Button+Generator+-+Imageless+css+buttons+simplified&i=1336081664267&s=&_=1336081876633" for 127.0.0.1 at 2012-05-03 17:51:16 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery172036146832280792296_1336081868913", "u"=>"http://www.cssbuttongenerator.com/", "t"=>"CSS Button Generator - Imageless css buttons simplified", "i"=>"1336081664267", "s"=>"add", "_"=>"1336081876633"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.cssbuttongenerator.com/' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 11)
+Rendered text template (0.0ms)
+Completed 200 OK in 72ms (Views: 1.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/s/add?callback=jQuery172036146832280792296_1336081868917&u=http%3A%2F%2Fwww.cssbuttongenerator.com%2F&t=CSS+Button+Generator+-+Imageless+css+buttons+simplified&i=1336081868835&s=&a=new+tag&_=1336081876636" for 127.0.0.1 at 2012-05-03 17:51:16 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery172036146832280792296_1336081868917", "u"=>"http://www.cssbuttongenerator.com/", "t"=>"CSS Button Generator - Imageless css buttons simplified", "i"=>"1336081868835", "s"=>"add", "a"=>"new tag", "_"=>"1336081876636"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.1ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.cssbuttongenerator.com/' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 11)[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 81ms (Views: 1.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/s/add?callback=jQuery172036146832280792296_1336081868915&u=http%3A%2F%2Fwww.cssbuttongenerator.com%2F&t=CSS+Button+Generator+-+Imageless+css+buttons+simplified&i=1336081802875&s=&_=1336081876635" for 127.0.0.1 at 2012-05-03 17:51:17 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery172036146832280792296_1336081868915", "u"=>"http://www.cssbuttongenerator.com/", "t"=>"CSS Button Generator - Imageless css buttons simplified", "i"=>"1336081802875", "s"=>"add", "_"=>"1336081876635"}
+  [1m[35mPatron Load (0.1ms)[0m  SELECT "patrons".* FROM "patrons" LIMIT 1
+  [1m[36mBookmark Load (0.1ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.cssbuttongenerator.com/' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 11)
+Rendered text template (0.0ms)
+Completed 200 OK in 118ms (Views: 1.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/s/add?callback=jQuery172036146832280792296_1336081868916&u=http%3A%2F%2Fwww.cssbuttongenerator.com%2F&t=CSS+Button+Generator+-+Imageless+css+buttons+simplified&i=1336081825636&s=&_=1336081876635" for 127.0.0.1 at 2012-05-03 17:51:17 -0400
+  Processing by RemoteController#service as */*
+  Parameters: {"callback"=>"jQuery172036146832280792296_1336081868916", "u"=>"http://www.cssbuttongenerator.com/", "t"=>"CSS Button Generator - Imageless css buttons simplified", "i"=>"1336081825636", "s"=>"add", "_"=>"1336081876635"}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" LIMIT 1[0m
+  [1m[35mBookmark Load (0.2ms)[0m  SELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."original_url" = 'http://www.cssbuttongenerator.com/' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("patron_id", "bookmark_id") VALUES (1, 11)[0m
+Rendered text template (0.0ms)
+Completed 200 OK in 75ms (Views: 1.4ms | ActiveRecord: 1.4ms)

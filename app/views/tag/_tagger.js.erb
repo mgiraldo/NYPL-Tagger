@@ -14,18 +14,8 @@
 			var divID = "#"+myUUID;
 			var html = '<div id="' + myUUID + '"></div>';
 			$('body').prepend(html);
-			$(divID).css("background-color", "rgba(0,0,0,0.75)");
-			$(divID).css("position", "absolute");
-			$(divID).css("z-index", "1000000000001");
-			$(divID).css("width", "100%");
-			$(divID).css("height", "100%");
-			$(divID).css("color", "#fff");
-			$(divID).css("font-size", "40px");
-			$(divID).css("text-align", "center");
-			$(divID).css("text-shadow", "#000 -3px 2px 0");
-			$(divID).css("font-family", "Helvetica, Arial, sans-serif");
 			//$(divID + " div.txt_" + myUUID).css("margin-top", "60px");
-			var formhtml = '<form id="f_' + myUUID + '" method="get" action="" onsubmit="return false;"><input type="text" value="" placeholder="type your tags here" id="tag_' + myUUID + '" /><br /></br /><div id="cloud_' + myUUID + '"></div></br /><a id="a_' + myUUID + '">Tag it!</a></form>';
+			var formhtml = '<form id="f_' + myUUID + '" method="get" action="" onsubmit="return false;"><div><input type="text" value="" placeholder="type your tags here" id="tag_' + myUUID + '" /></div><div style="font-size:14px;margin:10px;">You can also click on any of these suggested tags:</div><div id="cloud_' + myUUID + '"><div style="clear:both;"></div></div><a id="a_' + myUUID + '">Tag it!</a></form>';
 			$(divID).append(formhtml);
 			// tag "cloud"
 			var tags = ['<%=@tags.map(&:name).join("','")%>'];
@@ -34,14 +24,7 @@
 			for (var i=0;i<tags.length;++i) {
 				cloudstr += '<a href="javascript:;" class="pretag">' + tags[i] + '</a>';
 			}
-			$("#cloud_"+myUUID).html(cloudstr);
-			// styling cloud
-			$("#cloud_"+myUUID).css("font-size", "20px");
-			$("#cloud_"+myUUID).css("width", "600px");
-			$("#cloud_"+myUUID).css("margin-left", "auto");
-			$("#cloud_"+myUUID).css("margin-right", "auto");
-			$("#cloud_"+myUUID+" a").css("margin-right", "20px");
-			$("#cloud_"+myUUID+" a").css("color", "#fff");
+			$("#cloud_"+myUUID).prepend(cloudstr);
 			// pretag click
 			$("#cloud_"+myUUID+" a.pretag").click(
 				function () {
@@ -54,29 +37,6 @@
 					$("#tag_"+myUUID).focus();
 				}
 			);
-			// styling form
-			$("#tag_"+myUUID).css("font-size", "40px");
-			$("#tag_"+myUUID).css("font-family", "Inconsolata, Monaco, Courier New, monospace");
-			$("#tag_"+myUUID).css("margin-top", "60px");
-			$("#a_"+myUUID).css("font-size", "30px");
-			$("#a_"+myUUID).css("border-radius", "14px");
-			$("#a_"+myUUID).css("color", "#fff");
-			$("#a_"+myUUID).css("background-color", "#ccc");
-			$("#a_"+myUUID).css("text-decoration", "none");
-			$("#a_"+myUUID).css("padding", "10px");
-			$("#a_"+myUUID).css("text-shadow", "none");
-			$("#a_"+myUUID).hover(function() {
-				$(this).css("color", "#f00");
-				$(this).css("background-color", "#000");
-			});
-			$("#a_"+myUUID).mousedown(function() {
-				$(this).css("color", "#fff");
-				$(this).css("background-color", "#f00");
-			});
-			$("#a_"+myUUID).mouseout(function() {
-				$(this).css("color", "#fff");
-				$(this).css("background-color", "#ccc");
-			});
 			$("#tag_"+myUUID).focus();
 			// for escape key
 			$(document).keyup(function(e) {
@@ -86,7 +46,98 @@
 			$("#a_"+myUUID).click(function() {
 				saveURL(myUUID);
 			});
-			// execute
+			// CSS
+			// if in youtube, hide video
+			$("#watch-player embed").css("display","none");
+			// style main div
+			$(divID).css("padding", "0");
+			$(divID).css("margin", "0");
+			$(divID).css("background-color", "rgba(0,0,0,0.85)");
+			$(divID).css("position", "absolute");
+			$(divID).css("top", "0");
+			$(divID).css("left", "0");
+			$(divID).css("z-index", "1000000000001");
+			$(divID).css("width", "100%");
+			$(divID).css("height", "100%");
+			$(divID).css("color", "#fff");
+			$(divID).css("font-size", "40px");
+			$(divID).css("text-align", "center");
+			$(divID).css("text-shadow", "#000 -3px 2px 0");
+			$(divID).css("font-family", "Helvetica, Arial, sans-serif");
+			// form
+			$("#f_"+myUUID).css("text-align", "center");
+			$("#f_"+myUUID).css("width", "600px");
+			$("#f_"+myUUID).css("margin", "0 auto");
+			// input field
+			$("#tag_"+myUUID).css("font-size", "30px");
+			$("#tag_"+myUUID).css("font-family", "Inconsolata, Monaco, Courier New, monospace");
+			$("#tag_"+myUUID).css("margin", "30px auto");
+			$("#tag_"+myUUID).css("padding", "10px");
+			$("#tag_"+myUUID).css("width", "580px");
+			// cloud
+			$("#cloud_"+myUUID).css("width", "580px");
+			$("#cloud_"+myUUID).css("font-size", "20px");
+			$("#cloud_"+myUUID).css("margin-left", "auto");
+			$("#cloud_"+myUUID).css("margin-right", "auto");
+			// cloud links
+			$("#cloud_"+myUUID+" a").css("display", "block");
+			$("#cloud_"+myUUID+" a").css("float", "left");
+			$("#cloud_"+myUUID+" a").css("padding", "4px 8px");
+			$("#cloud_"+myUUID+" a").css("text-decoration", "none");
+			$("#cloud_"+myUUID+" a").css("border", "none");
+			$("#cloud_"+myUUID+" a").css("text-shadow", "none");
+			$("#cloud_"+myUUID+" a").css("margin", "10px");
+			$("#cloud_"+myUUID+" a").css("color", "#fff");
+			$("#cloud_"+myUUID+" a").css("background-color", "#999");
+			$("#cloud_"+myUUID+" a").hover(function() {
+				$(this).css("background-color","#000");
+			});
+			$("#cloud_"+myUUID+" a").mouseout(function() {
+				$(this).css("background-color","#999");
+			});
+			// button
+			$("#a_"+myUUID).css("display", "block");
+			$("#a_"+myUUID).css("cursor","hand");
+			$("#a_"+myUUID).css("cursor","pointer");
+			//$("#a_"+myUUID).css("width", "100px");
+			$("#a_"+myUUID).css("margin", "20px auto");
+			$("#a_"+myUUID).css("font-size", "30px");
+			$("#a_"+myUUID).css("clear", "both");
+			////
+			$("#a_"+myUUID).css("-moz-box-shadow","inset 0px 1px 0px 0px #ffffff");
+			$("#a_"+myUUID).css("-webkit-box-shadow","inset 0px 1px 0px 0px #ffffff");
+			$("#a_"+myUUID).css("box-shadow","inset 0px 1px 0px 0px #ffffff");
+			$("#a_"+myUUID).css("background","-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) )");
+			$("#a_"+myUUID).css("background","-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% )");
+			$("#a_"+myUUID).css("filter","progid","DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf')");
+			$("#a_"+myUUID).css("background-color","#ededed");
+			$("#a_"+myUUID).css("-moz-border-radius","6px");
+			$("#a_"+myUUID).css("-webkit-border-radius","6px");
+			$("#a_"+myUUID).css("border-radius","6px");
+			$("#a_"+myUUID).css("border","1px solid #dcdcdc");
+			$("#a_"+myUUID).css("display","inline-block");
+			$("#a_"+myUUID).css("color","#777777");
+			$("#a_"+myUUID).css("padding","6px 24px");
+			$("#a_"+myUUID).css("text-decoration","none");
+			$("#a_"+myUUID).css("text-shadow","1px 1px 0px #ffffff");
+			$("#a_"+myUUID).hover(function() {
+				$(this).css("color","#333");
+				$(this).css("background","-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed) )");
+				$(this).css("background","-moz-linear-gradient( center top, #dfdfdf 5%, #ededed 100% )");
+				$(this).css("filter","progid","DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed')");
+				$(this).css("background-color","#dfdfdf");
+			});
+			$("#a_"+myUUID).mousedown(function() {
+				$(this).css("position","relative");
+				$(this).css("top","1px");
+			});
+			$("#a_"+myUUID).mouseout(function() {
+				$(this).css("color","#777");
+				$(this).css("background","-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) )");
+				$(this).css("background","-moz-linear-gradient( center top, #ededed 5%, #dfdfdf 100% )");
+				$(this).css("filter","progid","DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf')");
+				$(this).css("background-color","#ededed");
+			});
 		}
 		function goModal() {
 		    if (/Firefox/.test(navigator.userAgent)) {
@@ -128,6 +179,8 @@
 	    	var myUUID = uuid;
 			var divID = "#"+myUUID;
 			$(divID).remove();
+			// if in youtube, show video
+			$("#watch-player embed").css("display","inherit");
 			if (document.title.substring(0, 12) == '(Saving...) ') document.title = document.title.substring(12);
 		}
 		function S4() {
