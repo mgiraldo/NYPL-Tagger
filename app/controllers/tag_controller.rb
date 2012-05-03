@@ -1,6 +1,7 @@
 class TagController < ApplicationController
   
   def new
+    @tags = Bookmark.tag_counts.order("taggings.tags_count desc").limit(10)
     respond_to do |format|
       format.js { render :layout => false }
     end

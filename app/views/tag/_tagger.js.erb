@@ -25,8 +25,35 @@
 			$(divID).css("text-shadow", "#000 -3px 2px 0");
 			$(divID).css("font-family", "Helvetica, Arial, sans-serif");
 			//$(divID + " div.txt_" + myUUID).css("margin-top", "60px");
-			var formhtml = '<form id="f_' + myUUID + '" method="get" action="" onsubmit="return false;"><input type="text" value="" placeholder="type your tags here" id="tag_' + myUUID + '" /><br /></br /><a id="a_' + myUUID + '">Tag it!</a></form>';
+			var formhtml = '<form id="f_' + myUUID + '" method="get" action="" onsubmit="return false;"><input type="text" value="" placeholder="type your tags here" id="tag_' + myUUID + '" /><br /></br /><div id="cloud_' + myUUID + '"></div></br /><a id="a_' + myUUID + '">Tag it!</a></form>';
 			$(divID).append(formhtml);
+			// tag "cloud"
+			var tags = ['<%=@tags.map(&:name).join("','")%>'];
+			// insert the tag "cloud"
+			var cloudstr = "";
+			for (var i=0;i<tags.length;++i) {
+				cloudstr += '<a href="javascript:;" class="pretag">' + tags[i] + '</a>';
+			}
+			$("#cloud_"+myUUID).html(cloudstr);
+			// styling cloud
+			$("#cloud_"+myUUID).css("font-size", "20px");
+			$("#cloud_"+myUUID).css("width", "600px");
+			$("#cloud_"+myUUID).css("margin-left", "auto");
+			$("#cloud_"+myUUID).css("margin-right", "auto");
+			$("#cloud_"+myUUID+" a").css("margin-right", "20px");
+			// pretag click
+			$("#cloud_"+myUUID+" a.pretag").click(
+				function () {
+					var arr = $("#tag_"+myUUID).val()=="" ? [] : $("#tag_"+myUUID).val().split(",");
+					$.each(arr, function(i,item) {
+						if (item.trim()=="") arr.splice(i,1);
+					});
+					arr.push($(this).text());
+					$("#tag_"+myUUID).val(arr.join());
+					$("#tag_"+myUUID).focus();
+				}
+			);
+			// styling form
 			$("#tag_"+myUUID).css("font-size", "40px");
 			$("#tag_"+myUUID).css("font-family", "Inconsolata, Monaco, Courier New, monospace");
 			$("#tag_"+myUUID).css("margin-top", "60px");
