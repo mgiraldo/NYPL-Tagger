@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120508155346) do
+ActiveRecord::Schema.define(:version => 20120508211021) do
 
   create_table "bookmarks", :force => true do |t|
     t.string   "type"
@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(:version => 20120508155346) do
   end
 
   create_table "bookmarks_patrons", :id => false, :force => true do |t|
-    t.string "bookmark_id"
-    t.string "patron_id"
+    t.integer "bookmark_id", :limit => 255
+    t.integer "patron_id",   :limit => 255
   end
 
   create_table "patrons", :force => true do |t|

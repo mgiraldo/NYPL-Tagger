@@ -25013,3 +25013,359 @@ Served asset /application.js - 304 Not Modified (0ms)
 
 Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-05-08 16:47:58 -0400
 Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+
+
+Started DELETE "/patrons/sign_out" for 127.0.0.1 at 2012-05-08 16:53:35 -0400
+  Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+IRGMZO3gea8pj0mMllst3WwVvqABRenmlDtL1kJBPo="}
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" WHERE "patrons"."id" = 9 LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 66ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-08 16:53:35 -0400
+  Processing by TagController#help as HTML
+Completed 401 Unauthorized in 21ms
+
+
+Started GET "/patrons/sign_in" for 127.0.0.1 at 2012-05-08 16:53:35 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/devise-2.0.4/app/views/devise/_links.erb (0.6ms)
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/devise-2.0.4/app/views/devise/sessions/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 72ms (Views: 34.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-08 16:53:35 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-05-08 16:53:36 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-05-08 16:53:36 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-05-08 16:53:36 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-05-08 16:53:36 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-05-08 16:53:36 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-08 16:53:36 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-08 16:53:36 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-05-08 16:53:36 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-05-08 16:53:36 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-05-08 16:53:36 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-05-08 16:53:36 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-08 16:53:36 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-05-08 16:53:36 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+
+
+Started GET "/patrons/sign_in" for 127.0.0.1 at 2012-05-08 16:53:50 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/devise-2.0.4/app/views/devise/_links.erb (0.7ms)
+Rendered /Users/mga/.rvm/gems/ruby-1.9.3-p125/gems/devise-2.0.4/app/views/devise/sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 72ms (Views: 10.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-08 16:53:50 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-05-08 16:53:50 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-05-08 16:53:50 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-05-08 16:53:50 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-05-08 16:53:50 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-05-08 16:53:50 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-08 16:53:50 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-08 16:53:50 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-05-08 16:53:50 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-05-08 16:53:50 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-05-08 16:53:50 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-05-08 16:53:50 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-08 16:53:50 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-05-08 16:53:50 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to AddOldTables (20120411170334)
+Migrating to DropTableTag (20120417203003)
+Migrating to ActsAsTaggableOnMigration (20120417203226)
+Migrating to ConvertUrlLongtext (20120424184734)
+Migrating to RemoveEmailFromPatron (20120508154559)
+Migrating to AddDeviseToPatrons (20120508155346)
+Migrating to ChangeBookmarksPatronsColumnTypes (20120508211021)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.5ms)[0m  [1mCREATE TEMPORARY TABLE "altered_bookmarks_patrons" ("bookmark_id" varchar(255), "patron_id" varchar(255)) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("bookmarks_patrons")
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "bookmarks_patrons"[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('2', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('2', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('2', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('3', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('4', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('4', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('5', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('5', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('5', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('6', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('6', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('5', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('5', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('5', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('7', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('5', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('5', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('8', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('9', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('9', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('9', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('10', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('10', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('11', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('11', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('11', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('11', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('11', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('11', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('11', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('11', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('12', '1')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('19', '9')
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "bookmarks_patrons"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "bookmarks_patrons" ("bookmark_id" integer(255), "patron_id" varchar(255)) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("altered_bookmarks_patrons")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "altered_bookmarks_patrons"
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('2', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('2', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('2', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('3', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('4', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('4', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('5', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('5', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('5', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('6', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('6', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('5', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('5', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('5', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('7', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('5', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('5', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('8', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('9', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('9', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('9', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('1', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('10', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('10', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('11', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('11', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('11', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('11', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('11', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('11', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('11', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('11', '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('12', '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES ('19', '9')[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "altered_bookmarks_patrons"
+  [1m[36m (0.1ms)[0m  [1mCREATE TEMPORARY TABLE "altered_bookmarks_patrons" ("bookmark_id" integer(255), "patron_id" varchar(255)) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("bookmarks_patrons")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "bookmarks_patrons"[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (2, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (2, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (2, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (3, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (4, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (4, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (5, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (5, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (5, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (6, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (6, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (5, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (5, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (5, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (7, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (5, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (5, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (8, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (9, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (9, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (9, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (10, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (10, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (11, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (11, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (11, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (11, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (11, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (11, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (11, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (11, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (12, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "altered_bookmarks_patrons" ("bookmark_id","patron_id") VALUES (19, '9')
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "bookmarks_patrons"[0m
+  [1m[35m (0.1ms)[0m  CREATE TABLE "bookmarks_patrons" ("bookmark_id" integer(255), "patron_id" integer(255)) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("altered_bookmarks_patrons")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "altered_bookmarks_patrons"
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (2, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (2, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (2, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (3, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (4, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (4, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (5, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (5, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (5, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (6, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (6, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (5, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (5, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (5, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (7, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (5, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (5, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (8, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (9, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (9, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (9, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (1, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (10, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (10, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (11, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (11, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (11, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (11, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (11, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (11, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (11, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (11, '1')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (12, '1')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "bookmarks_patrons" ("bookmark_id","patron_id") VALUES (19, '9')[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "altered_bookmarks_patrons"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120508211021')[0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("bookmarks")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("bookmarks_patrons")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("patrons")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_patrons_on_reset_password_token')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_patrons_on_email')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("taggings")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_taggings_on_taggable_id_and_taggable_type_and_context')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_taggings_on_tag_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("tags")
