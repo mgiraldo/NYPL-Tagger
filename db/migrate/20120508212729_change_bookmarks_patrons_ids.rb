@@ -5,11 +5,13 @@ class ChangeBookmarksPatronsIds < ActiveRecord::Migration
 	  rename_column :bookmarks_patrons, :patron_id, :patron_id_string
 	  add_column :bookmarks_patrons, :patron_id, :integer
 
-	  BookmarksPatrons.reset_column_information
-	  BookmarksPatrons.find_each { |c| c.update_attribute(:bookmark_id, c.bookmark_id_string) } 
-	  BookmarksPatrons.find_each { |c| c.update_attribute(:patron_id, c.patron_id_string) } 
 	  remove_column :bookmarks_patrons, :bookmark_id_string
 	  remove_column :bookmarks_patrons, :patron_id_string
+
+	  ActiveRecord::Base.connection.execute("TRUNCATE TABLE bookmarks")
+	  ActiveRecord::Base.connection.execute("TRUNCATE TABLE bookmarks_patrons")
+	  ActiveRecord::Base.connection.execute("TRUNCATE TABLE taggings")
+	  ActiveRecord::Base.connection.execute("TRUNCATE TABLE tags")
   end
 
   def down
