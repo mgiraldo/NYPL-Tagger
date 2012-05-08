@@ -22690,3 +22690,139 @@ Served asset /application.js - 304 Not Modified (0ms)
 
 Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-05-08 15:42:25 -0400
 Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+
+
+Started GET "/patrons" for 127.0.0.1 at 2012-05-08 16:00:57 -0400
+  Processing by PatronsController#index as HTML
+  [1m[36mPatron Load (0.1ms)[0m  [1mSELECT "patrons".* FROM "patrons" WHERE "patrons"."id" = 2 LIMIT 1[0m
+  [1m[35mBookmark Load (25.4ms)[0m  SELECT "bookmarks".* FROM "bookmarks" ORDER BY created_at DESC LIMIT 20
+  [1m[36mPatron Load (0.3ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 18 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 18 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 18 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 18 LIMIT 1
+  [1m[36mPatron Load (0.3ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 17 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 17 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 17 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 17 LIMIT 1
+  [1m[36mPatron Load (0.3ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 16 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 16 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 16 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 16 LIMIT 1
+  [1m[36mPatron Load (0.2ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 15 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 15 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 15 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 15 LIMIT 1
+  [1m[36mPatron Load (0.2ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 14 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 14 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 14 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 14 LIMIT 1
+  [1m[36mPatron Load (0.2ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 13 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 13 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 13 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 13 LIMIT 1
+  [1m[36mPatron Load (0.2ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 12 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 12 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 12 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 12 LIMIT 1
+  [1m[36mPatron Load (0.3ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 11 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 11 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 11 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 11 LIMIT 1
+  [1m[36mPatron Load (0.3ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 10 LIMIT 1
+  [1m[36mPatron Load (0.3ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 9 LIMIT 1
+  [1m[36mPatron Load (0.3ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 8 LIMIT 1
+  [1m[36mPatron Load (0.2ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 7 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 7 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 7 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 7 LIMIT 1
+  [1m[36mPatron Load (0.3ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 6 LIMIT 1
+  [1m[36mPatron Load (0.3ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 5 LIMIT 1
+  [1m[36mPatron Load (0.3ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 4 LIMIT 1
+  [1m[36mPatron Load (0.2ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 3 LIMIT 1
+  [1m[36mPatron Load (0.3ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 2 LIMIT 1
+  [1m[36mPatron Load (0.3ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT DISTINCT "patrons".* FROM "patrons" INNER JOIN "bookmarks_patrons" ON "patrons"."id" = "bookmarks_patrons"."patron_id" WHERE "bookmarks_patrons"."bookmark_id" = 1 LIMIT 1
+Rendered patrons/index.html.erb within layouts/application (42.1ms)
+Completed 200 OK in 114ms (Views: 45.6ms | ActiveRecord: 31.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-08 16:00:57 -0400
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-05-08 16:00:57 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-05-08 16:00:57 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-05-08 16:00:57 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-05-08 16:00:57 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-05-08 16:00:57 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-08 16:00:57 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-08 16:00:57 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-05-08 16:00:57 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-05-08 16:00:57 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-05-08 16:00:57 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-05-08 16:00:57 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-08 16:00:57 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-05-08 16:00:57 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)

@@ -7,6 +7,8 @@ gem 'rails', '3.1.1'
 
 gem 'devise'
 
+gem 'omniauth'
+
 gem 'omniauth-openid'
 
 gem 'acts-as-taggable-on', '~> 2.2.2'
