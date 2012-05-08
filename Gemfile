@@ -11,6 +11,8 @@ gem 'omniauth-openid'
 
 gem 'acts-as-taggable-on', '~> 2.2.2'
 
+gem 'thin'
+
 group :development do
   gem 'sqlite3'
 end
