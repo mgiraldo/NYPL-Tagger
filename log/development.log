@@ -28780,3 +28780,381 @@ Migrating to ChangeBookmarksPatronsIds (20120508212729)
   [1m[35m (0.0ms)[0m  PRAGMA index_info('index_taggings_on_taggable_id_and_taggable_type_and_context')
   [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_taggings_on_tag_id')[0m
   [1m[35m (0.0ms)[0m  PRAGMA index_list("tags")
+
+
+Started GET "/patrons/sign_in" for 127.0.0.1 at 2012-05-08 18:10:01 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/_links.erb (1.9ms)
+Rendered devise/sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 77ms (Views: 15.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:01 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:01 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:01 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:01 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:01 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:01 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:01 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:01 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:01 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:01 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:01 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:01 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:01 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-05-08 18:10:01 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+
+
+Started GET "/patrons/sign_in" for 127.0.0.1 at 2012-05-08 18:10:02 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/_links.erb (0.6ms)
+Rendered devise/sessions/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 71ms (Views: 10.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:03 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:03 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:03 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:03 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:03 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:03 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:03 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:03 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:03 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:03 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:03 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:03 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:03 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-05-08 18:10:03 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+
+
+Started GET "/patrons/sign_in" for 127.0.0.1 at 2012-05-08 18:10:07 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/_links.erb (0.6ms)
+Rendered devise/sessions/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 74ms (Views: 11.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:07 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:07 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:07 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:07 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:07 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:07 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:07 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:07 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:07 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:07 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:07 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:07 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:07 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-05-08 18:10:07 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+
+
+Started GET "/patrons/sign_in" for 127.0.0.1 at 2012-05-08 18:10:13 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/_links.erb (0.6ms)
+Rendered devise/sessions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 72ms (Views: 11.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:13 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:13 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:13 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:13 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:13 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:13 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:13 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:13 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:13 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:13 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:13 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:13 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:13 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-05-08 18:10:13 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+
+
+Started GET "/patrons/sign_in" for 127.0.0.1 at 2012-05-08 18:10:24 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/_links.erb (0.8ms)
+Rendered devise/sessions/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 71ms (Views: 9.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:24 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:24 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:24 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:24 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:24 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:24 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:24 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:24 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:24 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:24 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:24 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:24 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:24 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-05-08 18:10:24 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)
+
+
+Started GET "/patrons/sign_in" for 127.0.0.1 at 2012-05-08 18:10:43 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/_links.erb (0.5ms)
+Rendered devise/sessions/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 71ms (Views: 8.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:43 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bookmarks.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:43 -0400
+Served asset /bookmarks.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:43 -0400
+Served asset /patrons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/global.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:43 -0400
+Served asset /global.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:43 -0400
+Served asset /remote.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.css?body=1" for 127.0.0.1 at 2012-05-08 18:10:43 -0400
+Served asset /tag.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:43 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:43 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bookmarks.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:43 -0400
+Served asset /bookmarks.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/patrons.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:43 -0400
+Served asset /patrons.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/remote.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:43 -0400
+Served asset /remote.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tag.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:43 -0400
+Served asset /tag.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-08 18:10:43 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bg_toolbar.png" for 127.0.0.1 at 2012-05-08 18:10:44 -0400
+Served asset /bg_toolbar.png - 304 Not Modified (0ms)
