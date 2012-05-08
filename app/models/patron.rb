@@ -18,6 +18,7 @@ class Patron < ActiveRecord::Base
   devise :omniauthable #followed by anything else you need
 
   def self.find_for_open_id(access_token, signed_in_resource=nil)
+    puts access_token
     data = access_token.info
     if patron = Patron.where(:email => data["email"]).first
       patron

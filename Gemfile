@@ -13,7 +13,7 @@ gem 'omniauth-openid'
 
 gem 'acts-as-taggable-on', '~> 2.2.2'
 
-gem 'thin'
+gem 'mongrel', '1.2.0.pre2'  
 
 group :development do
   gem 'sqlite3'

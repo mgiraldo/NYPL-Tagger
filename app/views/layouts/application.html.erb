@@ -24,9 +24,9 @@
 			<div class="left_stuff">
 				<% if patron_signed_in? %>
 				<%= link_to_unless_current "My Account", edit_patron_path(current_patron), :target => "_top" %> •
-				<%= link_to "Sign out", "#" %>
+				<%= link_to('Logout', destroy_patron_session_path, :method => :delete) %> 
 				<% else %>
-				<%= link_to "sign in with google", patron_omniauth_authorize_path(:google) %>
+				<%= link_to "Sign in with Google", patron_omniauth_authorize_path(:google) %>
 				<% end %>
 			</div>
 		</div>
