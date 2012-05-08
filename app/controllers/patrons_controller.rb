@@ -1,4 +1,7 @@
 class PatronsController < ApplicationController
+
+  before_filter :authenticate_patron!
+
   # GET /patrons
   # GET /patrons.json
   def index

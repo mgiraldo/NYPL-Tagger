@@ -1,3 +1,4 @@
+tagger.sublime*
 db/*.sqlite3
 log/*.log
 tmp/**/*

@@ -11,24 +11,28 @@
 	<% if flash[:notice] %>
 	<div class="notice"><%= flash[:notice] %></div>
 	<% end %>
+	<% if flash[:alert] %>
+	<div class="alert"><%= flash[:alert] %></div>
+	<% end %>
 
 	<div id="main">
 		<div id="toolbar">
 
-			<%= link_to_unless_current "Your Favorites", @current_user %> •
+			<%= link_to_unless_current "Your Favorites", current_patron %> •
 			<%= link_to_unless_current "Latest activity", patrons_path %> •
-			<%= link_to_unless_current "Groups and Collections", @current_user %> •
-			<%= link_to_unless_current "Recommended for You", @current_user %>
 
 			<div class="left_stuff">
-				Hello, <%= @current_user.first_name %>! • 
-				<%= link_to_unless_current "My Account", edit_patron_path(@current_user), :target => "_top" %> •
+				<% if patron_signed_in? %>
+				<%= link_to_unless_current "My Account", edit_patron_path(current_patron), :target => "_top" %> •
 				<%= link_to "Sign out", "#" %>
+				<% else %>
+				<%= link_to "sign in with google", patron_omniauth_authorize_path(:google) %>
+				<% end %>
 			</div>
 		</div>
-		
 		<%= yield  %>
 	</div>
+	<%= debug current_patron.inspect %>
 
 </body>
 </html>

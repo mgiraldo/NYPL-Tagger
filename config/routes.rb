@@ -1,5 +1,7 @@
 Tagger::Application.routes.draw do
  
+  devise_for :patrons, :controllers => { :omniauth_callbacks => "patrons/omniauth_callbacks" }
+
   match 't', :to => 'tag#new'
   match '/', :to => 'tag#help'
   

@@ -3,7 +3,7 @@ class RemoteController < ApplicationController
   def toolbar
     @parent_href = params[:parent]
     @parent_title = params[:title]
-    @saved =  @current_user.bookmarks.exists?(:original_url => @parent_href)
+    @saved =  current_patron.bookmarks.exists?(:original_url => @parent_href)
     render :layout => false
   end
 
@@ -13,8 +13,8 @@ class RemoteController < ApplicationController
       :original_url => params[:p],
       :title => params[:t]
     )
-    @current_user.bookmarks << @bookmark
-    @success = @current_user.save!
+    current_patron.bookmarks << @bookmark
+    @success = current_patron.save!
     respond_to do |format|
         format.html { redirect_to :action => "toolbar" }
         format.js
@@ -31,8 +31,8 @@ class RemoteController < ApplicationController
         @bookmark = Bookmark.find_or_create_by_original_url(
           url, :title => title
         ){ |b| b.tag_list = tag_list }
-        @current_user.bookmarks << @bookmark
-        @success = @current_user.save!
+        current_patron.bookmarks << @bookmark
+        @success = current_patron.save!
         if params[:callback] == nil
           render :json => {:callbak=>params[:callback], :response=>@success.to_json, :content=>@bookmark}, :layout => false
         else

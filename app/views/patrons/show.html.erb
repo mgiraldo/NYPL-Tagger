@@ -1,27 +1,5 @@
-<div id="account_info">
-	
-	<%= image_tag "fake-profile-#{@patron.id}.png", :height => 150 %>
-	
-	<h1><%= @patron.full_name %></h1>
-	
-	<% if @patron.id == @current_user.id %>
-	<p><em>That's you!</em></p>
-	<% end %>
-	
-	<p><%= @patron.bio %></p>
-	<p><%= @patron.city %>, <%=h @patron.state %></p>
-
-	<h4>Following 32 people</h4>
-	<%= image_tag "fake-followers.png" %>
-
-	<h4>Followed by 14 people</h4>
-	<%= image_tag "fake-followers.png" %>
-
-</div>
-
 <div id="main_col">
-	
-	<h2><%= @patron.first_name %>'s favorite stuff at the NYPL</h2>
+	<h2>Patron's favorite stuff on the web</h2>
 	
 	<% if @patron.lib_locations.size > 0 %>
 		<h3>Libraries</h3>
