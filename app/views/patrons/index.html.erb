@@ -9,7 +9,7 @@
 
 	<% unless bookmark.patrons.first.nil? %>
 		<li>
-			<%= link_to bookmark.patrons.first.email + bookmark.patrons.first.full_name, bookmark.patrons.first %> 
+			<%= link_to bookmark.patrons.first.full_name, bookmark.patrons.first %> 
 			bookmarked <%= link_to image_tag(bookmark.thumbnail_image_address, :height => 40), bookmark.link if bookmark.type == "DgImage" %> <%= link_to bookmark.title, bookmark.link %>.
 		</li>
 	<% end %>

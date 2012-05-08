@@ -5,7 +5,7 @@ class Patron < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :first_name, :last_name, :password, :password_confirmation, :remember_me
   
   has_and_belongs_to_many :bookmarks, :uniq => true, :order => "title"
   has_and_belongs_to_many :pages, :uniq => true, :join_table => "bookmarks_patrons", :association_foreign_key => "bookmark_id", :conditions => {:type => "Bookmark"}, :class_name => "Bookmark", :order => "title"
@@ -18,12 +18,11 @@ class Patron < ActiveRecord::Base
   devise :omniauthable #followed by anything else you need
 
   def self.find_for_open_id(access_token, signed_in_resource=nil)
-    puts access_token
     data = access_token.info
     if patron = Patron.where(:email => data["email"]).first
       patron
     else
-      Patron.create!(:email => data["email"], :password => Devise.friendly_token[0,20])
+      Patron.create!(:email => data["email"], :first_name => data["first_name"], :last_name => data["last_name"], :password => Devise.friendly_token[0,20])
     end
   end
 

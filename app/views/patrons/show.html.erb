@@ -1,5 +1,6 @@
 <div id="main_col">
-	<h2>Patron's favorite stuff on the web</h2>
+	
+	<h2><%= @patron.first_name %>'s favorite stuff at the NYPL</h2>
 	
 	<% if @patron.lib_locations.size > 0 %>
 		<h3>Libraries</h3>
